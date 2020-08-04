@@ -20,78 +20,80 @@
 
       <div aria-live="polite" aria-atomic="true" style="position: relative;">
       </div>
+      <div class="container-fluid">
 
-      <div class="row justify-content-lg-center">     
-        <div class="cost-section col-lg-2 mx-1 form-group">
-          <h3> Storage </h3>
-          <hr>
-          
-          <label for="rawCost" > Raw costs per Gb </label> <br>
-          <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1">€</span>
-              </div>
-              <input type="number" id="rawCost" step=0.001 placeholder="0.00" class="form-control" readonly>
-          </div>
-          <label for="surfDiscount"> Surf discount (%) </label> <br>
-          <div class="input-group mb-3">
-              <input type="number" id="surfDiscount" class="form-control" placeholder="0.0" aria-describedby="basic-addon2" readonly>
-              <div class="input-group-append">
-                <span class="input-group-text" id="basic-addon2">%</span>
-              </div>
-          </div>
-          <label for="surfAdmin"> Surf administration costs (%) </label> <br>
-          <div class="input-group mb-3">
-              <input type="number" id="surfAdmin" class="form-control" placeholder="0.0" aria-describedby="basic-addon2" readonly>
-              <div class="input-group-append">
-                <span class="input-group-text" id="basic-addon2">%</span>
-              </div>
-          </div>
-          <label for="btw"> Btw (Dutch VAT) (%) </label>
-          <div class="input-group mb-3">
-              <input type="number" id="btw" class="form-control" placeholder="0.0" aria-describedby="basic-addon2" readonly>
-              <div class="input-group-append">
-                <span class="input-group-text" id="basic-addon2">%</span>
-              </div>
-          </div>
-          <label for="numberGb"> Total number of Gbs </label>
-          <div class="input-group mb-3">
-              <input type="number" id="numberGb" class="form-control" min=0 max=10000 placeholder="0" aria-describedby="basic-addon2" onchange="computeStorage(this.value);setBottomline();">
-              <div class="input-group-append">
-                <span class="input-group-text" id="basic-addon2">Gb</span>
-              </div>
-          </div>
-          <hr>
-          <label for="storage-cost"> Total storage costs per month </label> <br>
-          <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1">€</span>
-              </div>
-              <output type="number" id="storage-cost" step=0.001 placeholder="0.00" class="form-control piece-cost" readonly></output>
-          </div>
-        </div>
-        
-        
-        <div class="cost-section col-lg-6 mx-1 form-group">
-          <h3> Virtual Machines <button class="btn btn-primary float-right" data-toggle="tooltip" data-placement="top" title="Add an extra VM" onclick="addVM()"><i class="fa fa-plus fa-1x"></i></h3> 
+        <div class="row justify-content-lg-center">     
+          <div class="cost-section col-lg-2 mx-1 form-group">
+            <h3> Storage </h3>
             <hr>
-            <div id="vm-deck" class="row">
+            
+            <label for="rawCost" > Raw costs per Gb </label> <br>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon1">€</span>
+                </div>
+                <input type="number" id="rawCost" step=0.001 placeholder="0.00" class="form-control" readonly>
+            </div>
+            <label for="surfDiscount"> Surf discount (%) </label> <br>
+            <div class="input-group mb-3">
+                <input type="number" id="surfDiscount" class="form-control" placeholder="0.0" aria-describedby="basic-addon2" readonly>
+                <div class="input-group-append">
+                  <span class="input-group-text" id="basic-addon2">%</span>
+                </div>
+            </div>
+            <label for="surfAdmin"> Surf administration costs (%) </label> <br>
+            <div class="input-group mb-3">
+                <input type="number" id="surfAdmin" class="form-control" placeholder="0.0" aria-describedby="basic-addon2" readonly>
+                <div class="input-group-append">
+                  <span class="input-group-text" id="basic-addon2">%</span>
+                </div>
+            </div>
+            <label for="btw"> Btw (Dutch VAT) (%) </label>
+            <div class="input-group mb-3">
+                <input type="number" id="btw" class="form-control" placeholder="0.0" aria-describedby="basic-addon2" readonly>
+                <div class="input-group-append">
+                  <span class="input-group-text" id="basic-addon2">%</span>
+                </div>
+            </div>
+            <label for="numberGb"> Total number of Gbs </label>
+            <div class="input-group mb-3">
+                <input type="number" id="numberGb" class="form-control" min=0 max=10000 placeholder="0" aria-describedby="basic-addon2" onchange="computeStorage(this.value);setBottomline();">
+                <div class="input-group-append">
+                  <span class="input-group-text" id="basic-addon2">Gb</span>
+                </div>
+            </div>
+            <hr>
+            <label for="storage-cost"> Total storage costs per month </label> <br>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon1">€</span>
+                </div>
+                <output type="number" id="storage-cost" step=0.001 placeholder="0.00" class="form-control piece-cost" readonly></output>
+            </div>
           </div>
-        </div>
-        <div class="cost-section col-lg-2 mx-1">
-          <h3>Total costs </h3> 
-          <hr>
+          
+          
+          <div class="cost-section col-lg-6 mx-1 form-group">
+            <h3> Virtual Machines <button class="btn btn-primary float-right" data-toggle="tooltip" data-placement="top" title="Add an extra VM" onclick="addVM()"><i class="fa fa-plus fa-1x"></i></h3> 
+              <hr>
+              <div id="vm-deck" class="row">
+            </div>
+          </div>
+          <div class="cost-section col-lg-2 mx-1">
+            <h3>Total costs </h3> 
+            <hr>
 
-          <label for="bottomLine"> Total workspace costs per month </label><br>
-          <div class="input-group mb-3">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="basic-addon1">€</span>
-            </div>           
-            <output type="number" id="bottomLine" step=0.001 placeholder="0.00" class="form-control" readonly>
+            <label for="bottomLine"> Total workspace costs per month </label><br>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">€</span>
+              </div>           
+              <output type="number" id="bottomLine" step=0.001 placeholder="0.00" class="form-control" readonly>
+            </div>
+            
           </div>
           
         </div>
-        
       </div>
     </body>
 </html>

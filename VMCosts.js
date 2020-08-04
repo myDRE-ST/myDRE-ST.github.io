@@ -79,6 +79,7 @@ function addVM() {
                     </div>`
 
     $("#vm-deck").append(vm_section);
+    $("#vm-"+runningID+"-type").trigger("change");
 }
 
 function copyVM(val) {
@@ -141,8 +142,6 @@ function copyVM(val) {
     $("#vm-"+runningID+"-hours").val(hoursVal); 
 
     $("#vm-"+runningID+"-type").trigger("change");
-
-
 }
 
 function deleteVM(val) {
@@ -200,7 +199,6 @@ $(document).ready(function() {
     getOptionsPromise.then((message) => {
         console.log("This is in the then: " + message)
         addVM();
-        $("#vm-1-type").trigger("change");
     }).catch((message) => {
         console.log("This is in the catch: " + message)
     });
