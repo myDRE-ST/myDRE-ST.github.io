@@ -1,48 +1,58 @@
-var dd_options = []; // dropdown vm type options
+/*
+* Logic to add/del/copy Virtual Machines (VM) and compute their costs in DRE Cost estimator
+* Written by Jochem Bek, UMC Utrecht
+* Last updated: 4-9-2020
+*/
 
-var vm_ram = [];
-var vm_prices = [];
-var vm_cpu = [];
+var btw_perc = 21; // Dutch VAT taxes in %
 
+// vars occupied in getOptionsPromise
+var dd_options = []; // html string of option elements for VM types to be added to select element in VM cards
+var vm_prices = []; // prices per hour with VM type as key
+var vm_ram = []; // RAM size with VM type as key 
+var vm_cpu = []; // number of cpu cores with VM type as key
+
+// call API to get info in VM types ! Preferably MS Rate Card API
 let getOptionsPromise = new Promise((resolve, reject) => {
     $.getJSON("https://gist.githubusercontent.com/JochemBek/98643e51feccf93dd536bb24fa07e9e2/raw/0067a0d18a4a264b5f74fe6a9093fc803c4d9e88/virtualmachines.json")
     .done(function( data ) {
-        $.each( data, function( key, val ) {            
-            vm_prices[key] = parseFloat(val['Prijs per uur'].replace("€", "").replace(',', '.'));
-            vm_ram[key] = val.RAM;
-            vm_cpu[key] = val["vCPU('s)"];
+        $.each( data, function( key, val ) { // for each of the VM types in the json data
+            vm_prices[key] = parseFloat(((100+btw_perc)/100)*val['Prijs per uur'].replace("€", "").replace(',', '.')); // set price for VM type key
+            vm_ram[key] = val.RAM; // set RAM size for VM type key
+            vm_cpu[key] = val["vCPU('s)"]; // set number of cpu cores for VM type key
 
-            if(key == "B2S") {
+            if(key == "B2S") { // add B2S type as selected default option to html string
                 dd_options.push( "<option value='" + key + "' selected>" + key + "</option>" );
-            } else {
+            } else { // add other VM types as options to html string 
                 dd_options.push( "<option value='" + key + "'>" + key + "</option>" );
             }
             
         });
-        console.log(vm_prices);
         resolve("Success!");
     }).fail(function() {
         reject("Error!");
     });
 });
 
-var runningID = 0
+var running_id = 0 // running numeric id of VMs
 
+// add a VM on +-button click
 function addVM() {
-    runningID = runningID + 1;
-
-    var vm_section =    `<div id="vm-`+runningID+`" class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
+    running_id = running_id + 1; 
+ 
+    // html string for VM card, each element where necessary gets VM id added to id-tag or value-tag
+    var vm_section =    `<div id="vm-`+running_id+`" class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
                         <div class="card border-primary vm-instance">
-                        <div class="card-header">VM `+runningID+`
+                        <div class="card-header">VM `+running_id+`
                             <div class="btn-group float-right" role="group" aria-label="Basic example">
-                            <button class="btn btn-danger" value="`+runningID+`" data-toggle="tooltip" data-placement="left" title="Delete this VM" onclick="deleteVM(this.value)"> <i class="fa fa-trash"></i></button>
-                            <button class="btn btn-outline-secondary" value="`+runningID+`" data-toggle="tooltip" data-placement="right" title="Copy this VM configuration" onclick="copyVM(this.value)"> <i class="fa fa-copy"></i></button>
+                            <button class="btn btn-danger" value="`+running_id+`" data-toggle="tooltip" data-placement="left" title="Delete this VM" onclick="deleteVM(this.value)"> <i class="fa fa-trash"></i></button>
+                            <button class="btn btn-outline-secondary" value="`+running_id+`" data-toggle="tooltip" data-placement="right" title="Copy this VM configuration" onclick="copyVM(this.value)"> <i class="fa fa-copy"></i></button>
                             </div>
                         </div>
                         <div class="card-body">
-                            <label for="vm-`+runningID+`-type">VM Type</label>
+                            <label for="vm-`+running_id+`-type">VM Type</label>
                             <div class="input-group mb-3">
-                            <select id="vm-`+runningID+`-type" onchange="setVMCosts(this);setVMDetails(this);setBottomline();">
+                            <select id="vm-`+running_id+`-type" onchange="setVMCosts(this);setVMDetails(this);setBottomline();">
                             `+dd_options+`
                             </select>
                             </div>
@@ -50,18 +60,18 @@ function addVM() {
                             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-cpu" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" d="M5 0a.5.5 0 0 1 .5.5V2h1V.5a.5.5 0 0 1 1 0V2h1V.5a.5.5 0 0 1 1 0V2h1V.5a.5.5 0 0 1 1 0V2A2.5 2.5 0 0 1 14 4.5h1.5a.5.5 0 0 1 0 1H14v1h1.5a.5.5 0 0 1 0 1H14v1h1.5a.5.5 0 0 1 0 1H14v1h1.5a.5.5 0 0 1 0 1H14a2.5 2.5 0 0 1-2.5 2.5v1.5a.5.5 0 0 1-1 0V14h-1v1.5a.5.5 0 0 1-1 0V14h-1v1.5a.5.5 0 0 1-1 0V14h-1v1.5a.5.5 0 0 1-1 0V14A2.5 2.5 0 0 1 2 11.5H.5a.5.5 0 0 1 0-1H2v-1H.5a.5.5 0 0 1 0-1H2v-1H.5a.5.5 0 0 1 0-1H2v-1H.5a.5.5 0 0 1 0-1H2A2.5 2.5 0 0 1 4.5 2V.5A.5.5 0 0 1 5 0zm-.5 3A1.5 1.5 0 0 0 3 4.5v7A1.5 1.5 0 0 0 4.5 13h7a1.5 1.5 0 0 0 1.5-1.5v-7A1.5 1.5 0 0 0 11.5 3h-7zM5 6.5A1.5 1.5 0 0 1 6.5 5h3A1.5 1.5 0 0 1 11 6.5v3A1.5 1.5 0 0 1 9.5 11h-3A1.5 1.5 0 0 1 5 9.5v-3zM6.5 6a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z"/>
                             </svg>
-                            <span id="vm-`+runningID+`-Cores"></span>
+                            <span id="vm-`+running_id+`-Cores"></span>
                             <br>
                             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-hdd-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" d="M0 10a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-1zm2.5 1a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1zm2 0a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/>
                                 <path d="M.91 7.204A2.993 2.993 0 0 1 2 7h12c.384 0 .752.072 1.09.204l-1.867-3.422A1.5 1.5 0 0 0 11.906 3H4.094a1.5 1.5 0 0 0-1.317.782L.91 7.204z"/>
                             </svg>
-                            <span id="vm-`+runningID+`-RAM"></span>
+                            <span id="vm-`+running_id+`-RAM"></span>
                             </div>
                             <hr>         
-                            <label for="vm-`+runningID+`-hours"> Hours/month </label>
+                            <label for="vm-`+running_id+`-hours"> Hours/month </label>
                             <div class="input-group mb-3">
-                            <input id="vm-`+runningID+`-hours" type="number" max="750" min="1" class="form-control" placeholder="0" aria-describedby="basic-addon2" onchange="setVMCosts(this);setBottomline();">
+                            <input id="vm-`+running_id+`-hours" type="number" max="750" min="1" class="form-control" placeholder="0" aria-describedby="basic-addon2" onchange="setVMCosts(this);setBottomline();">
                             <div class="input-group-append">
                                 <span class="input-group-text" id="basic-addon2">h</span>
                             </div>
@@ -72,31 +82,34 @@ function addVM() {
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="basic-addon1">€</span>
                             </div>
-                            <output type="number" id="vm-`+runningID+`-cost" step=0.001 placeholder="0.00" class="form-control piece-cost" readonly></output>
+                            <output type="number" id="vm-`+running_id+`-cost" step=0.001 placeholder="0.00" class="form-control piece-cost" readonly></output>
                             </div>
                         </div>
                         </div>
                     </div>`
 
-    $("#vm-deck").append(vm_section);
-    $("#vm-"+runningID+"-type").trigger("change");
+    $("#vmDeck").append(vm_section); // append VM card to VM deck
+
+    $("#vm-"+running_id+"-type").trigger("change"); // trigger onchange so that cpu cores and RAM are updated 
 }
 
+// copy a VM on copy-button click
 function copyVM(val) {
-    runningID = runningID + 1;
+    running_id = running_id + 1;
 
-    var vm_section = `<div id="vm-`+runningID+`" class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
+    // html string for VM card, each element where necessary gets VM id added to id-tag or value-tag
+    var vm_section = `<div id="vm-`+running_id+`" class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
                         <div class="card border-primary vm-instance">
-                        <div class="card-header">VM `+runningID+`
+                        <div class="card-header">VM `+running_id+`
                             <div class="btn-group float-right" role="group" aria-label="Basic example">
-                            <button class="btn btn-danger" value="`+runningID+`" data-toggle="tooltip" data-placement="left" title="Delete this VM" onclick="deleteVM(this.value)"> <i class="fa fa-trash"></i></button>
-                            <button class="btn btn-outline-secondary" value="`+runningID+`" data-toggle="tooltip" data-placement="right" title="Copy this VM configuration" onclick="copyVM(this.value)"> <i class="fa fa-copy"></i></button>
+                            <button class="btn btn-danger" value="`+running_id+`" data-toggle="tooltip" data-placement="left" title="Delete this VM" onclick="deleteVM(this.value);setBottomline();"> <i class="fa fa-trash"></i></button>
+                            <button class="btn btn-outline-secondary" value="`+running_id+`" data-toggle="tooltip" data-placement="right" title="Copy this VM configuration" onclick="copyVM(this.value)"> <i class="fa fa-copy"></i></button>
                             </div>
                         </div>
                         <div class="card-body">
-                            <label for="vm-`+runningID+`-type">VM Type</label>
+                            <label for="vm-`+running_id+`-type">VM Type</label>
                             <div class="input-group mb-3">
-                            <select id="vm-`+runningID+`-type" onchange="setVMCosts(this);setVMDetails(this);setBottomline();">
+                            <select id="vm-`+running_id+`-type" onchange="setVMCosts(this);setVMDetails(this);setBottomline();">
                             `+dd_options+`
                             </select>
                             </div>
@@ -104,18 +117,18 @@ function copyVM(val) {
                             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-cpu" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" d="M5 0a.5.5 0 0 1 .5.5V2h1V.5a.5.5 0 0 1 1 0V2h1V.5a.5.5 0 0 1 1 0V2h1V.5a.5.5 0 0 1 1 0V2A2.5 2.5 0 0 1 14 4.5h1.5a.5.5 0 0 1 0 1H14v1h1.5a.5.5 0 0 1 0 1H14v1h1.5a.5.5 0 0 1 0 1H14v1h1.5a.5.5 0 0 1 0 1H14a2.5 2.5 0 0 1-2.5 2.5v1.5a.5.5 0 0 1-1 0V14h-1v1.5a.5.5 0 0 1-1 0V14h-1v1.5a.5.5 0 0 1-1 0V14h-1v1.5a.5.5 0 0 1-1 0V14A2.5 2.5 0 0 1 2 11.5H.5a.5.5 0 0 1 0-1H2v-1H.5a.5.5 0 0 1 0-1H2v-1H.5a.5.5 0 0 1 0-1H2v-1H.5a.5.5 0 0 1 0-1H2A2.5 2.5 0 0 1 4.5 2V.5A.5.5 0 0 1 5 0zm-.5 3A1.5 1.5 0 0 0 3 4.5v7A1.5 1.5 0 0 0 4.5 13h7a1.5 1.5 0 0 0 1.5-1.5v-7A1.5 1.5 0 0 0 11.5 3h-7zM5 6.5A1.5 1.5 0 0 1 6.5 5h3A1.5 1.5 0 0 1 11 6.5v3A1.5 1.5 0 0 1 9.5 11h-3A1.5 1.5 0 0 1 5 9.5v-3zM6.5 6a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z"/>
                             </svg>
-                            <span id="vm-`+runningID+`-Cores"></span>
+                            <span id="vm-`+running_id+`-Cores"></span>
                             <br>
                             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-hdd-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" d="M0 10a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-1zm2.5 1a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1zm2 0a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/>
                                 <path d="M.91 7.204A2.993 2.993 0 0 1 2 7h12c.384 0 .752.072 1.09.204l-1.867-3.422A1.5 1.5 0 0 0 11.906 3H4.094a1.5 1.5 0 0 0-1.317.782L.91 7.204z"/>
                             </svg>
-                            <span id="vm-`+runningID+`-RAM"></span>
+                            <span id="vm-`+running_id+`-RAM"></span>
                             </div>
                             <hr>         
-                            <label for="vm-`+runningID+`-hours"> Hours/month </label>
+                            <label for="vm-`+running_id+`-hours"> Hours/month </label>
                             <div class="input-group mb-3">
-                            <input id="vm-`+runningID+`-hours" type="number" max="750" min="1" class="form-control" placeholder="0" aria-describedby="basic-addon2" onchange="setVMCosts(this);setBottomline();">
+                            <input id="vm-`+running_id+`-hours" type="number" max="750" min="1" class="form-control" placeholder="0" aria-describedby="basic-addon2" onchange="setVMCosts(this);setBottomline();">
                             <div class="input-group-append">
                                 <span class="input-group-text" id="basic-addon2">h</span>
                             </div>
@@ -126,83 +139,77 @@ function copyVM(val) {
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="basic-addon1">€</span>
                             </div>
-                            <output type="number" id="vm-`+runningID+`-cost" step=0.001 placeholder="0.00" class="form-control piece-cost" readonly></output>
+                            <output type="number" id="vm-`+running_id+`-cost" step=0.001 placeholder="0.00" class="form-control piece-cost" readonly></output>
                             </div>
                         </div>
                         </div>
                     </div>`
 
-    $("#vm-deck").append(vm_section);
+    $("#vmDeck").append(vm_section); // append VM card to VM deck
     
-    var idVM = val;
+    // duplicate settings of copied card
+    var idVM = val; // with VM id of copied card
     var typeVal = $("#vm-"+idVM+"-type").val();
     var hoursVal = $("#vm-"+idVM+"-hours").val();  
 
-    $("#vm-"+runningID+"-type").val(typeVal);
-    $("#vm-"+runningID+"-hours").val(hoursVal); 
+    $("#vm-"+running_id+"-type").val(typeVal); // set type
+    $("#vm-"+running_id+"-hours").val(hoursVal); // set hours/month 
 
-    $("#vm-"+runningID+"-type").trigger("change");
+    $("#vm-"+running_id+"-type").trigger("change"); // trigger onchange so that cpu cores, RAM and VM + total costs are updated 
 }
 
+// delete VM on delete-button click
 function deleteVM(val) {
-    var toDelete = "#vm-" + val;
+    var toDelete = "#vm-" + val; // id-tag of to-be-deleted VM card
 
     $(toDelete).remove();
 }
 
+// set cpu cores and RAM  in VM card
 function setVMDetails(inputObject) {
-    var idVM = inputObject.id.split("-")[1];
-    var typeVal = $("#vm-"+idVM+"-type").val();
+    var idVM = inputObject.id.split("-")[1]; // get VM id
+    var typeVal = $("#vm-"+idVM+"-type").val(); // get type of VM
 
-    var nr_cpu = vm_cpu[typeVal];
-    var ram_val = vm_ram[typeVal];
+    var nr_cpu = vm_cpu[typeVal]; // get cpu cores for type
+    var ram_val = vm_ram[typeVal]; // get RAM for type
 
-    console.log(nr_cpu);
-    console.log(ram_val);
-    console.log(idVM);
-
-    $("#vm-"+idVM+"-Cores").html(nr_cpu);
-    $("#vm-"+idVM+"-RAM").html(ram_val);
+    $("#vm-"+idVM+"-Cores").html(nr_cpu); // set cpu cores
+    $("#vm-"+idVM+"-RAM").html(ram_val); // set RAM
 }
 
+// compute and set VM cost per piece
 function setVMCosts(inputObject) {
-    var idVM = inputObject.id.split("-")[1];
-    var costm = 0;
+    var idVM = inputObject.id.split("-")[1]; // get VM id
+    var costm = 0; // default cost/month is 0 
 
-    var typeVal = $("#vm-"+idVM+"-type").val();
-    var hoursVal = $("#vm-"+idVM+"-hours").val();    
+    var typeVal = $("#vm-"+idVM+"-type").val(); // get type of VM
+    var hoursVal = $("#vm-"+idVM+"-hours").val(); // get hours per month of VM
 
-    if (typeVal.length !== 0 && hoursVal.length !== 0) {
-        costm = vm_prices[typeVal]*hoursVal;
-
-        $("#vm-"+idVM+"-cost").val(costm.toFixed(2));
+    if (typeVal.length !== 0 && hoursVal.length !== 0) { // if neither input is empty
+        costm = vm_prices[typeVal]*hoursVal; // compute cost per month
+        $("#vm-"+idVM+"-cost").val(costm.toFixed(2)); // set cost per month with 2 decimals
     }
 }
 
+// compute and set bottomline costs
 function setBottomline() {
-    var sum = 0.00;
+    var sum = 0.00; // start with 0 
 
+    // for all per-piece costs
     $('.piece-cost').each(function(){
         console.log(this.value);
         if(this.value) {
             console.log(parseFloat(this.value));
-            sum += parseFloat(this.value);
+            sum += parseFloat(this.value); // add per-piece cost
         } 
     });
 
-    $("#bottomLine").val(sum.toFixed(2));
+    $("#bottomLine").val(sum.toFixed(2)); // set bottomline cost
 }
 
-
 $(document).ready(function() {
-
     getOptionsPromise.then((message) => {
-        console.log("This is in the then: " + message)
         addVM();
     }).catch((message) => {
-        console.log("This is in the catch: " + message)
     });
-
-
-
 });

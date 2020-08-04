@@ -3,14 +3,16 @@ body {
     background-color: rgba(234,242,250,1.0000000000);
 }
 
-.cost-section {
+.column-section {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     margin-top: 10px;
     padding-top: 15px;
+    border-radius: 0;
+    margin-bottom: 20px!important;
 }
 
-.cost-section h3 {
+.column-section h3 {
     margin-bottom: 20px;
 }
 
@@ -20,12 +22,8 @@ body {
     margin-bottom: 15px!important;
 }
 
-
-.vm-card-title {
-    text-align: center;
-    font-family: Calibri;
-    font-size: 12pt;
-    font-weight: bold;
+.card-header {
+    font-size: 1.325rem;
 }
 
 .vm-card-title h5 {
@@ -40,30 +38,11 @@ body {
     font-weight: 500!important;
 }
 
-.bg-transparent{
-    border: none!important;
-    background-color: none!important;
-}
-
-.form-group {
-    border-radius: 0;
-    margin-bottom: 0px!important;
-}
-
-.card-header {
-    font-size: 1.325rem;
-}
-
 .border-primary {
     animation: pulse 0.5s alternate 2;
 }
 
 @keyframes pulse {
   from { box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); }
-  to { box-shadow: 0px 0px 8px 0px #007bff; }
-}
-
-
-table {
-    font-weight: normal;
+  to { box-shadow: 0px 0px 16px 0px #007bff; }
 }
