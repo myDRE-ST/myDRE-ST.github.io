@@ -8,6 +8,7 @@
 
         <script src="VMCosts.js"></script>
         <script src="StorageCosts.js"></script>
+        <script src="print.js"></script>
 
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 
@@ -94,7 +95,10 @@
               </div>           
               <output type="number" id="bottomLine" step=0.001 placeholder="0.00" class="form-control" readonly>
             </div>
+            <button class="btn btn-info" data-toggle="tooltip" data-placement="top" title="Create PDF of estimation overview" onclick="printOverview()">Create PDF</button>
           </div>
+          
+          
           
         </div>
       </div>

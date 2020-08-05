@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+        <script src="VMTypes.js"></script>
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="anDREa.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    </head>
+    
+    <body>
+      <!-- div to put notification in, if necessary -->
+      <div aria-live="polite" aria-atomic="true" style="position: relative;">
+      </div>
+
+      <!-- Bootstrap container -->
+      <div class="container-fluid">
+        <div class="row justify-content-lg-center">  
+
+          <!-- section with VM specification question column -->   
+          <div id="questionsColumn" class="column-section col-lg-2 mx-1 form-group">
+            <h3> Questions </h3>
+            <hr>
+            <p class="text-muted"> Fill in the questions below to specify your VM needs. <p>
+            <p class="text-muted"> No clue? Leave the default options. These suit the needs of most people.</p>
+            <label for="nrCores" > How many cores do you need? </label> <br>
+            <div class="input-group mb-3">
+                <input type="number" id="nrCores" step=1 placeholder="2" class="form-control" >
+                <div class="input-group-append">
+                    <span class="input-group-text">CPU's</span>
+                </div>
+            </div>
+            <label for="nrGb" > How much RAM do you need? </label> <br>
+            <div class="input-group mb-3">
+                <input type="number" id="nrGb" step=1 placeholder="16" class="form-control" >
+                <div class="input-group-append">
+                    <span class="input-group-text">Gb</span>
+                </div>
+            </div>
+            <div class="input-group mb-3">
+                <button type="button" class="btn btn-primary" onclick="findTypes()">Find VM types</button>
+            </div>
+
+          </div>
+          
+          <!-- section with recommended VM types -->
+          <div id="recommendationsColumn" class="column-section col-lg-6 mx-1 form-group">
+            <h3> Recommendations </h3> 
+            <hr>
+            <div id="typeDeck" class="row">
+              <!-- VM types cards go here from VMTypes.js -->
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </body>
+</html>
