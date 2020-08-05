@@ -94,8 +94,10 @@
                 <span class="input-group-text" id="basic-addon1">€</span>
               </div>           
               <output type="number" id="bottomLine" step=0.001 placeholder="0.00" class="form-control" readonly>
-            </div>
-            <button class="btn btn-info" data-toggle="tooltip" data-placement="top" title="Create PDF of estimation overview" onclick="printOverview()">Create PDF</button>
+              </div>
+            <!--Button to print window; problem is that the current doc is usually in an iframe and print() isnt always allowed + the print function prints whole window-->
+            <!--<button class="btn btn-info" data-toggle="tooltip" data-placement="top" title="Create PDF of estimation overview" onclick="printOverview()">Create PDF</button>-->
+            <p class="text-muted">Disclaimer: No rights can be derived from cost estimations provided by this tool. Costs are subject to change over time.</p>
           </div>
           
           
