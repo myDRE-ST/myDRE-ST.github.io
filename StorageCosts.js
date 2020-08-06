@@ -5,16 +5,44 @@
 */
 
 var raw_cost_per_gb = 0.0510; // cost per gb per month before taxes ! preferably from MS API call
-var surf_discount_perc = 5; // discount in % from SURF-MS contract
-var surf_admin_perc = 5; // administration costs in % from SURF contract
+var surf_discount_perc = 3; // discount in % from SURF-MS contract
+var surf_admin_perc = 7; // administration costs in % from SURF contract
 var btw_perc = 21; // Dutch VAT taxes in %
+
+var cost_per_gb = raw_cost_per_gb*((100-surf_discount_perc)/100)*((100+surf_admin_perc)/100)*((100+21)/100)
 
 // initally set cost components in readonly inputs
 function setCostComponents() {
+    console.log("ran");
     $("#rawCost").val(raw_cost_per_gb);
     $("#surfDiscount").val(surf_discount_perc);
     $("#surfAdmin").val(surf_admin_perc);
     $("#btw").val(btw_perc);
+    $("#netCost").val(cost_per_gb.toFixed(3));
+
+    console.log($("#popover-content").html());
+    showComponentInfo();
+}
+
+// set contents of popover
+function showComponentInfo() {
+    $("#popoverCostComponents").popover({
+        html : true,
+        sanitize: false,
+        title: function() {
+            return $("#popover-head").html();
+        },
+        content: function() {
+            return $("#popover-content").html();
+        }
+    });
+
+    togglePopovers();
+}
+
+// activate popover functionality
+function togglePopovers() {
+    $('[data-toggle="popover"]').popover();
 }
 
 // compute and set costs of storage on gb input
@@ -22,10 +50,10 @@ function computeStorageCosts(val) {
     var nr_gbs = val; // number of gbs input 
 
     if(nr_gbs < 0) { // give error alert and set storage cost to 0 
-        alert("There is a negative number of Gbs! Please fill in a positive number."); 
+        $("#numberGbs").addClass("is-invalid");
         $("#storageCost").val(0);
     } else { // compute and set storage cost
-        var total_cost = nr_gbs*raw_cost_per_gb*((100-surf_discount_perc)/100)*((100+surf_admin_perc)/100)*((100+21)/100); // product of cost components
+        var total_cost = nr_gbs*cost_per_gb;
         $("#storageCost").val(total_cost.toFixed(2));
     }
 }
