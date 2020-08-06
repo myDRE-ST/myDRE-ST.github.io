@@ -70,7 +70,7 @@ function addVM() {
                             </div>
                             <hr>
                             <label for="vm-`+running_id+`-hours"> Hours/month </label>
-                            <a id="popoverCostComponents" class="float-right" tabindex="0" role="button" data-toggle="popover" data-trigger="focus" title="Not so sure?" data-content="We recommend 150-180 hours. Your VM is then running 9-5 on all weekdays.">
+                            <a id="popoverCostComponents" class="float-right" tabindex="0" role="button" data-toggle="popover" data-trigger="focus" title="Not so sure?" data-content="We recommend 180 hours. Your VM is then running 9-5 on all weekdays. Should the VM be always-on? Then fill in 750 hours.">
                                 <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-info-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
                                     <path d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588z"/>
@@ -78,7 +78,7 @@ function addVM() {
                                 </svg>
                             </a>
                             <div class="input-group mb-3">
-                            <input id="vm-`+running_id+`-hours" type="number" max="750" min="1" class="form-control" pattern="\d+" placeholder="0" aria-describedby="basic-addon2" onchange="setVMCosts(this);setBottomline();">
+                            <input id="vm-`+running_id+`-hours" type="number" max="750" min="0" step="5" class="form-control" pattern="\d+" placeholder="0" aria-describedby="basic-addon2" onchange="setVMCosts(this);setBottomline();">
                             <div class="input-group-append">
                                 <span class="input-group-text" id="basic-addon2">h</span>
                             </div>
@@ -137,7 +137,7 @@ function copyVM(val) {
                             </div>
                             <hr>         
                             <label for="vm-`+running_id+`-hours"> Hours/month </label>
-                            <a id="popoverCostComponents" class="float-right" tabindex="0" role="button" data-toggle="popover" data-trigger="focus" title="Not so sure?" data-content="We recommend to run a VM only when you're working on it. If you run a VM from 9-5, every weekday, it is on <b>150-180</b> hours a month.">
+                            <a id="popoverCostComponents" class="float-right" tabindex="0" role="button" data-toggle="popover" data-trigger="focus" title="Not so sure?" data-content="We recommend 180 hours. Your VM is then running 9-5 on all weekdays. Should the VM be always-on? Then fill in 750 hours.">
                                 <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-info-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
                                     <path d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588z"/>
@@ -145,7 +145,7 @@ function copyVM(val) {
                                 </svg>
                             </a>
                             <div class="input-group mb-3">
-                            <input id="vm-`+running_id+`-hours" type="number" max="750" min="1" class="form-control" placeholder="0" aria-describedby="basic-addon2" onchange="setVMCosts(this);setBottomline();">
+                            <input id="vm-`+running_id+`-hours" type="number" max="750" min="0" step="5" class="form-control" placeholder="0" aria-describedby="basic-addon2" onchange="setVMCosts(this);setBottomline();">
                             <div class="input-group-append">
                                 <span class="input-group-text" id="basic-addon2">h</span>
                             </div>
