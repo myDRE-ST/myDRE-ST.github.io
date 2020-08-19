@@ -41,5 +41,5 @@ function findTypes() {
 }
 
 $(document).ready(function() {
-    getDetails();
+    //getDetails();
 });

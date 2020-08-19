@@ -29,6 +29,7 @@
           <!-- section with storage column -->   
           <div id="storageColumn" class="column-section col-lg-2 mx-1 form-group">
             <h3> Storage </h3>
+            
             <hr>
             <label for="netCost" > Costs per GiB </label> 
             <a id="popoverCostComponents" class="float-right" tabindex="0" role="button" data-toggle="popover" data-trigger="focus">
@@ -52,26 +53,29 @@
                 </div>
                 <output type="number" id="rawCost" step=0.001 placeholder="0.00" class="form-control" readonly></output>
               </div>
-              <label for="surfDiscount"> SURF discount (%) </label> <br>
-              <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <span class="input-group-text perc-sign">-</span>
-                </div>  
-                <output type="number" id="surfDiscount" class="form-control" placeholder="0.0" aria-describedby="basic-addon2" readonly></output>
-                <div class="input-group-append">
-                  <span class="input-group-text perc-sign">%</span>
+              <div id="surfComp">
+                <label for="surfDiscount"> SURF discount (%) </label> <br>
+                <div class="input-group mb-3 surf-content">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text perc-sign">-</span>
+                  </div>  
+                  <output type="number" id="surfDiscount" class="form-control" placeholder="0.0" aria-describedby="basic-addon2" readonly></output>
+                  <div class="input-group-append">
+                    <span class="input-group-text perc-sign">%</span>
+                  </div>
+                </div>
+                <label for="surfAdmin"> SURF administration costs (%) </label> <br>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text perc-sign">+</span>
+                  </div> 
+                    <output type="number" id="surfAdmin" class="form-control" placeholder="0.0" aria-describedby="basic-addon2" readonly></output>
+                    <div class="input-group-append">
+                    <span class="input-group-text perc-sign">%</span>
+                    </div>
                 </div>
               </div>
-              <label for="surfAdmin"> SURF administration costs (%) </label> <br>
-              <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <span class="input-group-text perc-sign">+</span>
-                </div> 
-                  <output type="number" id="surfAdmin" class="form-control" placeholder="0.0" aria-describedby="basic-addon2" readonly></output>
-                  <div class="input-group-append">
-                  <span class="input-group-text perc-sign">%</span>
-                  </div>
-              </div>
+              
               <label for="btw"> Btw (Dutch VAT) (%) </label>
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
@@ -83,14 +87,20 @@
                   </div>
               </div>
             </div>
+            
                 
             <br>
-            <div class="input-group mb-3">
+            <div class="input-group mb-1">
               <div class="input-group-prepend">
                 <span class="input-group-text money-sign">€</span>
               </div>
               <output type="number" id="netCost" step=0.001 placeholder="0.00" class="form-control" readonly></output>
             </div>
+            <div class="custom-control custom-switch mb-3">
+              <input type="checkbox" class="custom-control-input my-auto" id="surfcumulus" onclick="setCostComponents(this)">
+              <label class="custom-control-label" for="surfcumulus">My institution has a SURFCumulus contract</label>
+            </div>
+            
 
             <label for="numberGbs"> Total number of GiB </label>
             <div class="input-group mb-3">
@@ -128,7 +138,14 @@
                 <span class="input-group-text" id="basic-addon1">€</span>
               </div>           
               <output type="number" id="bottomLine" step=0.001 placeholder="0.00" class="form-control" readonly>
-              </div>
+            </div>
+            <label for="bottomLineExcl"> Excl btw (Dutch VAT) </label><br>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">€</span>
+              </div>           
+              <output type="number" id="bottomLineExcl" step=0.001 placeholder="0.00" class="form-control" readonly>
+            </div>
             <!--Button to print window; problem is that the current doc is usually in an iframe and print() isnt always allowed + the print function prints whole window-->
             <!--<button class="btn btn-info" data-toggle="tooltip" data-placement="top" title="Create PDF of estimation overview" onclick="printOverview()">Create PDF</button>-->
             <p class="text-muted">Disclaimer: No rights can be derived from cost estimations provided by this tool. Costs are subject to change over time.</p>
