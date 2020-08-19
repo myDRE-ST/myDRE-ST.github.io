@@ -62,7 +62,7 @@ function addVM() {
                             <div class="btn-group float-right" role="group" aria-label="Basic example">
                             <button class="btn btn-danger" value="` +
     running_id +
-    `" data-toggle="tooltip" data-placement="left" title="Delete this VM" onclick="deleteVM(this.value)"> <i class="fa fa-trash"></i></button>
+    `" data-toggle="tooltip" data-placement="left" title="Delete this VM" onclick="deleteVM(this.value);"> <i class="fa fa-trash"></i></button>
                             <button class="btn btn-outline-secondary" value="` +
     running_id +
     `" data-toggle="tooltip" data-placement="right" title="Copy this VM configuration" onclick="copyVM(this.value)"> <i class="fa fa-copy"></i></button>
@@ -154,7 +154,7 @@ function copyVM(val) {
                             <div class="btn-group float-right" role="group" aria-label="Basic example">
                             <button class="btn btn-danger" value="` +
     running_id +
-    `" tabindex="0" data-toggle="tooltip" data-placement="left" title="Delete this VM" onclick="deleteVM(this.value);setBottomline();"> <i class="fa fa-trash"></i></button>
+    `" tabindex="0" data-toggle="tooltip" data-placement="left" title="Delete this VM" onclick="deleteVM(this.value)"> <i class="fa fa-trash"></i></button>
                             <button class="btn btn-outline-secondary" value="` +
     running_id +
     `" tabindex="0" data-toggle="tooltip" data-placement="right" title="Copy this VM configuration" onclick="copyVM(this.value)"> <i class="fa fa-copy"></i></button>
@@ -243,6 +243,7 @@ function deleteVM(val) {
   var toDelete = "#vm-" + val; // id-tag of to-be-deleted VM card
   $(".tooltip").tooltip("hide");
   $(toDelete).remove();
+  setBottomline();
 }
 
 // set cpu cores and RAM  in VM card
