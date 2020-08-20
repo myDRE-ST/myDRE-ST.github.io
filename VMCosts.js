@@ -4,6 +4,8 @@
  * Last updated: 4-9-2020
  */
 
+var surf_discount_perc = 3; // discount in % from SURF-MS contract
+var surf_admin_perc = 7; // administration costs in % from SURF contract
 var btw_perc = 21; // Dutch VAT taxes in %
 
 // vars occupied in getOptionsPromise
@@ -21,8 +23,7 @@ let getOptionsPromise = new Promise((resolve, reject) => {
       $.each(data, function (key, val) {
         // for each of the VM types in the json data
         vm_prices[key] = parseFloat(
-          ((100 + btw_perc) / 100) *
-            val["Prijs per uur"].replace("€", "").replace(",", ".")
+          val["Prijs per uur"].replace("€", "").replace(",", ".")
         ); // set price for VM type key
         vm_ram[key] = val.RAM; // set RAM size for VM type key
         vm_cpu[key] = val["vCPU('s)"]; // set number of cpu cores for VM type key
@@ -75,7 +76,7 @@ function addVM() {
                             <div class="input-group mb-3">
                             <select id="vm-` +
     running_id +
-    `-type" class="custom-select" onchange="setVMCosts(this);setVMDetails(this);setBottomline();">
+    `-type" class="custom-select vm-input" onchange="setVMCosts(this);setVMDetails(this);setBottomline();">
                             ` +
     dd_options +
     `
@@ -111,7 +112,7 @@ function addVM() {
                             <div class="input-group mb-3">
                             <input id="vm-` +
     running_id +
-    `-hours" type="number" max="750" min="0" step="5" class="form-control" pattern="\d+" placeholder="0" aria-describedby="basic-addon2" onchange="setVMCosts(this);setBottomline();">
+    `-hours" type="number" max="750" min="0" step="5" class="form-control vm-input" pattern="\d+" placeholder="0" aria-describedby="basic-addon2" onchange="setVMCosts(this);setBottomline();">
                             <div class="input-group-append">
                                 <span class="input-group-text" id="basic-addon2">h</span>
                             </div>
@@ -167,7 +168,7 @@ function copyVM(val) {
                             <div class="input-group mb-3">
                             <select id="vm-` +
     running_id +
-    `-type" class="custom-select" onchange="setVMCosts(this);setVMDetails(this);setBottomline();">
+    `-type" class="custom-select vm-input" onchange="setVMCosts(this);setVMDetails(this);setBottomline();">
                             ` +
     dd_options +
     `
@@ -203,7 +204,7 @@ function copyVM(val) {
                             <div class="input-group mb-3">
                             <input id="vm-` +
     running_id +
-    `-hours" type="number" max="750" min="0" step="5" class="form-control" placeholder="0" aria-describedby="basic-addon2" onchange="setVMCosts(this);setBottomline();">
+    `-hours" type="number" max="750" min="0" step="5" class="form-control vm-input" placeholder="0" aria-describedby="basic-addon2" onchange="setVMCosts(this);setBottomline();">
                             <div class="input-group-append">
                                 <span class="input-group-text" id="basic-addon2">h</span>
                             </div>
@@ -258,6 +259,10 @@ function setVMDetails(inputObject) {
   $("#vm-" + idVM + "-RAM").html(ram_val); // set RAM
 }
 
+function setSurfVM() {
+  $(".vm-input").trigger("change");
+}
+
 // compute and set VM cost per piece
 function setVMCosts(inputObject) {
   var idVM = inputObject.id.split("-")[1]; // get VM id
@@ -268,7 +273,23 @@ function setVMCosts(inputObject) {
 
   if (typeVal.length !== 0 && hoursVal.length !== 0 && hoursVal >= 0) {
     // if neither input is empty and hours is positive
-    costm = vm_prices[typeVal] * hoursVal; // compute cost per month
+    // compute cost per month
+    var surf_toggle = $("#surfcumulus").is(":checked");
+
+    console.log("Calculating VM cost, surf-toggle is " + surf_toggle);
+
+    if (surf_toggle) {
+      // if on surfcumulus, include surf discount + admin costs, and apply btw (Dutch VAT)
+      costm =
+        vm_prices[typeVal] *
+        ((100 + surf_discount_perc) / 100) *
+        ((100 + surf_admin_perc) / 100) *
+        ((100 + btw_perc) / 100) *
+        hoursVal;
+    } else {
+      // if not on surfcumulus, just apply btw (Dutch VAT)
+      costm = vm_prices[typeVal] * ((100 + btw_perc) / 100) * hoursVal;
+    }
     $("#vm-" + idVM + "-cost").val(costm.toFixed(2)); // set cost per month with 2 decimals
   } else if (typeVal.length !== 0 && hoursVal.length !== 0 && hoursVal < 0) {
     $("#vm-" + idVM + "-hours").addClass("is-invalid");

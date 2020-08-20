@@ -97,7 +97,7 @@
               <output type="number" id="netCost" step=0.001 placeholder="0.00" class="form-control" readonly></output>
             </div>
             <div class="custom-control custom-switch mb-3">
-              <input type="checkbox" class="custom-control-input my-auto" id="surfcumulus" onclick="setCostComponents(this)">
+              <input type="checkbox" class="custom-control-input my-auto" id="surfcumulus" onclick="setCostComponents(this); setSurfVM(this);">
               <label class="custom-control-label" for="surfcumulus">My institution has a SURFCumulus contract</label>
             </div>
             
