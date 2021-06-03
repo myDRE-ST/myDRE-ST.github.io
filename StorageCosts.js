@@ -37,7 +37,7 @@ function setCostComponents(val) {
     $("#netCost").val(cost_per_gb.toFixed(3));
   }
 
-  console.log($("#popover-content").html());
+  //console.log($("#popover-content").html());
   showComponentInfo();
 
   $("#numberGbs").trigger("change");

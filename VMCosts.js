@@ -14,7 +14,12 @@ var vm_prices = []; // prices per hour with VM type as key
 var vm_ram = []; // RAM size with VM type as key
 var vm_cpu = []; // number of cpu cores with VM type as key
 
-// call API to get info in VM types ! Preferably MS Rate Card API
+// vars occupied in getOsDiskPromise
+var osdisk_options = []; // html string of option elements for OS disk types to be added to select element in VM cards
+var osdisk_prices = []; // prices per month for os disk
+var osdisk_sizes = []; // disk size in GiB
+
+// promise to get VM types 
 let getOptionsPromise = new Promise((resolve, reject) => {
   $.getJSON(
     "https://gist.githubusercontent.com/JochemBek/98643e51feccf93dd536bb24fa07e9e2/raw/0067a0d18a4a264b5f74fe6a9093fc803c4d9e88/virtualmachines.json"
@@ -36,6 +41,36 @@ let getOptionsPromise = new Promise((resolve, reject) => {
         } else {
           // add other VM types as options to html string
           dd_options.push("<option value='" + key + "'>" + key + "</option>");
+        }
+      });
+      resolve("Success!");
+    })
+    .fail(function () {
+      reject("Error!");
+    });
+});
+
+// promise to get os disk types
+let getOsDiskPromise = new Promise((resolve, reject) => {
+  $.getJSON(
+    "https://gist.githubusercontent.com/JochemBek/e90f1f24ed0b30f7672e6b470b320bc8/raw/bd98d4f85ecdcfd30a4c714b7636aa2e9cc31acc/osdisks.json"
+  )
+    .done(function (data) {
+      $.each(data, function (key, val) {
+        // for each of the os disks in the json data
+        osdisk_prices[key] = parseFloat(
+          val["Prijs per maand"].replace("€", "").replace(",", ".")
+        ); // set price for os disk
+        osdisk_sizes[key] = val["Schijfgrootte"]; // set number of cpu cores for VM type key
+
+        if (key == "E10") {
+          // add E10 type as selected default option to html string
+          osdisk_options.push(
+            "<option value='" + key + "' selected>" + key + "</option>"
+          );
+        } else {
+          // add other VM types as options to html string
+          osdisk_options.push("<option value='" + key + "'>" + key + "</option>");
         }
       });
       resolve("Success!");
@@ -82,6 +117,7 @@ function addVM() {
     `
                             </select>
                             </div>
+          
                             <div class="mb-3">
                             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-cpu" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" d="M5 0a.5.5 0 0 1 .5.5V2h1V.5a.5.5 0 0 1 1 0V2h1V.5a.5.5 0 0 1 1 0V2h1V.5a.5.5 0 0 1 1 0V2A2.5 2.5 0 0 1 14 4.5h1.5a.5.5 0 0 1 0 1H14v1h1.5a.5.5 0 0 1 0 1H14v1h1.5a.5.5 0 0 1 0 1H14v1h1.5a.5.5 0 0 1 0 1H14a2.5 2.5 0 0 1-2.5 2.5v1.5a.5.5 0 0 1-1 0V14h-1v1.5a.5.5 0 0 1-1 0V14h-1v1.5a.5.5 0 0 1-1 0V14h-1v1.5a.5.5 0 0 1-1 0V14A2.5 2.5 0 0 1 2 11.5H.5a.5.5 0 0 1 0-1H2v-1H.5a.5.5 0 0 1 0-1H2v-1H.5a.5.5 0 0 1 0-1H2v-1H.5a.5.5 0 0 1 0-1H2A2.5 2.5 0 0 1 4.5 2V.5A.5.5 0 0 1 5 0zm-.5 3A1.5 1.5 0 0 0 3 4.5v7A1.5 1.5 0 0 0 4.5 13h7a1.5 1.5 0 0 0 1.5-1.5v-7A1.5 1.5 0 0 0 11.5 3h-7zM5 6.5A1.5 1.5 0 0 1 6.5 5h3A1.5 1.5 0 0 1 11 6.5v3A1.5 1.5 0 0 1 9.5 11h-3A1.5 1.5 0 0 1 5 9.5v-3zM6.5 6a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z"/>
@@ -98,6 +134,20 @@ function addVM() {
     running_id +
     `-RAM"></span>
                             </div>
+
+                            <label for="osdisk-` +
+                            running_id +
+                                `-type">OS disk</label>
+                                                        <div class="input-group mb-3">
+                                                        <select id="osdisk-` +
+                                running_id +
+                                `-type" class="custom-select vm-input" onchange="setVMCosts(this);setVMDetails(this);setBottomline();">
+                                                        ` +
+                                osdisk_options +
+                                `
+                            </select>
+                            </div>
+
                             <hr>
                             <label for="vm-` +
     running_id +
@@ -190,6 +240,20 @@ function copyVM(val) {
     running_id +
     `-RAM"></span>
                             </div>
+
+                            <label for="osdisk-` +
+                            running_id +
+                                `-type">OS disk</label>
+                                                        <div class="input-group mb-3">
+                                                        <select id="osdisk-` +
+                                running_id +
+                                `-type" class="custom-select vm-input" onchange="setVMCosts(this);setVMDetails(this);setBottomline();">
+                                                        ` +
+                                osdisk_options +
+                                `
+                            </select>
+                            </div>
+
                             <hr>         
                             <label for="vm-` +
     running_id +
@@ -271,12 +335,14 @@ function setVMCosts(inputObject) {
   var typeVal = $("#vm-" + idVM + "-type").val(); // get type of VM
   var hoursVal = $("#vm-" + idVM + "-hours").val(); // get hours per month of VM
 
+  var osdiskTypeVal = $("#osdisk-" + idVM + "-type").val(); // get type of OS disk
+
   if (typeVal.length !== 0 && hoursVal.length !== 0 && hoursVal >= 0) {
     // if neither input is empty and hours is positive
     // compute cost per month
     var surf_toggle = $("#surfcumulus").is(":checked");
 
-    console.log("Calculating VM cost, surf-toggle is " + surf_toggle);
+    //console.log("Calculating VM cost, surf-toggle is " + surf_toggle);
 
     if (surf_toggle) {
       // if on surfcumulus, include surf discount + admin costs, and apply btw (Dutch VAT)
@@ -285,10 +351,15 @@ function setVMCosts(inputObject) {
         ((100 + surf_discount_perc) / 100) *
         ((100 + surf_admin_perc) / 100) *
         ((100 + btw_perc) / 100) *
-        hoursVal;
+        hoursVal +
+        osdisk_prices[osdiskTypeVal] *
+        ((100 + surf_discount_perc) / 100) *
+        ((100 + surf_admin_perc) / 100) *
+        ((100 + btw_perc) / 100);
     } else {
       // if not on surfcumulus, just apply btw (Dutch VAT)
-      costm = vm_prices[typeVal] * ((100 + btw_perc) / 100) * hoursVal;
+      costm = vm_prices[typeVal] * ((100 + btw_perc) / 100) * hoursVal +
+      osdisk_prices[osdiskTypeVal] * ((100 + btw_perc) / 100);
     }
     $("#vm-" + idVM + "-cost").val(costm.toFixed(2)); // set cost per month with 2 decimals
   } else if (typeVal.length !== 0 && hoursVal.length !== 0 && hoursVal < 0) {
@@ -304,12 +375,12 @@ function setBottomline() {
   // for all per-piece costs
   $(".piece-cost").each(function () {
     if (this.value) {
-      console.log(parseFloat(this.value));
+      //console.log(parseFloat(this.value));
       sum += parseFloat(this.value); // add per-piece cost
     }
   });
 
-  var sum_excl = sum * ((100 - btw_perc) / 100);
+  var sum_excl = sum / (1 + (btw_perc/100));
 
   $("#bottomLine").val(sum.toFixed(2)); // set bottomline cost
   $("#bottomLineExcl").val(sum_excl.toFixed(2)); // set bottomline cost
@@ -324,6 +395,7 @@ function toggleTooltips() {
 
 $(document).ready(function () {
   getOptionsPromise
+    .then(() => getOsDiskPromise)
     .then((message) => {
       addVM();
     })

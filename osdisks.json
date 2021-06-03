@@ -1,0 +1,314 @@
+{
+    "P1": {
+       "Schijfgrootte": "4 GiB",
+       "Prijs per maand": "€0,66",
+       "1 jaar gereserveerd Prijs per maand": "N/A",
+       "Maximum IOPS (Maximum IOPS met bursting)": "120 (3.500)",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "25 MB/seconde (170 MB/seconde)",
+       "Prijs per koppeling per maand (gedeelde schijf)": "N/A"
+    },
+    "P2": {
+       "Schijfgrootte": "8 GiB",
+       "Prijs per maand": "€1,32",
+       "1 jaar gereserveerd Prijs per maand": "N/A",
+       "Maximum IOPS (Maximum IOPS met bursting)": "120 (3.500)",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "25 MB/seconde (170 MB/seconde)",
+       "Prijs per koppeling per maand (gedeelde schijf)": "N/A"
+    },
+    "P3": {
+       "Schijfgrootte": "16 GiB",
+       "Prijs per maand": "€2,64",
+       "1 jaar gereserveerd Prijs per maand": "N/A",
+       "Maximum IOPS (Maximum IOPS met bursting)": "120 (3.500)",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "25 MB/seconde (170 MB/seconde)",
+       "Prijs per koppeling per maand (gedeelde schijf)": "N/A"
+    },
+    "P4": {
+       "Schijfgrootte": "32 GiB",
+       "Prijs per maand": "€4,90",
+       "1 jaar gereserveerd Prijs per maand": "N/A",
+       "Maximum IOPS (Maximum IOPS met bursting)": "120 (3.500)",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "25 MB/seconde (170 MB/seconde)",
+       "Prijs per koppeling per maand (gedeelde schijf)": "N/A"
+    },
+    "P6": {
+       "Schijfgrootte": "64 GiB",
+       "Prijs per maand": "€9,47",
+       "1 jaar gereserveerd Prijs per maand": "N/A",
+       "Maximum IOPS (Maximum IOPS met bursting)": "240 (3.500)",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "50 MB/seconde (170 MB/seconde)",
+       "Prijs per koppeling per maand (gedeelde schijf)": "N/A"
+    },
+    "P10": {
+       "Schijfgrootte": "128 GiB",
+       "Prijs per maand": "€18,29",
+       "1 jaar gereserveerd Prijs per maand": "N/A",
+       "Maximum IOPS (Maximum IOPS met bursting)": "500 (3.500)",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "100 MB/seconde (170 MB/seconde)",
+       "Prijs per koppeling per maand (gedeelde schijf)": "N/A"
+    },
+    "P15": {
+       "Schijfgrootte": "256 GiB",
+       "Prijs per maand": "€35,26",
+       "1 jaar gereserveerd Prijs per maand": "N/A",
+       "Maximum IOPS (Maximum IOPS met bursting)": "1.100 (3.500)",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "125 MB/seconde (170 MB/seconde)",
+       "Prijs per koppeling per maand (gedeelde schijf)": "€2,01"
+    },
+    "P20": {
+       "Schijfgrootte": "512 GiB",
+       "Prijs per maand": "€67,92",
+       "1 jaar gereserveerd Prijs per maand": "N/A",
+       "Maximum IOPS (Maximum IOPS met bursting)": "2.300 (3.500)",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "150 MB/seconde (170 MB/seconde)",
+       "Prijs per koppeling per maand (gedeelde schijf)": "€3,61"
+    },
+    "P30": {
+       "Schijfgrootte": "1 TiB",
+       "Prijs per maand": "€125,39",
+       "1 jaar gereserveerd Prijs per maand": "€119,12",
+       "Maximum IOPS (Maximum IOPS met bursting)": "5.000 (30.000)",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "200 MB/seconde (1,000 MB/seconde)",
+       "Prijs per koppeling per maand (gedeelde schijf)": "€7,21"
+    },
+    "P40": {
+       "Schijfgrootte": "2 TiB",
+       "Prijs per maand": "€240,29",
+       "1 jaar gereserveerd Prijs per maand": "€228,25",
+       "Maximum IOPS (Maximum IOPS met bursting)": "7.500 (30.000)",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "250 MB/seconde (1,000 MB/seconde)",
+       "Prijs per koppeling per maand (gedeelde schijf)": "€14,41"
+    },
+    "P50": {
+       "Schijfgrootte": "4 TiB",
+       "Prijs per maand": "€459,69",
+       "1 jaar gereserveerd Prijs per maand": "€436,69",
+       "Maximum IOPS (Maximum IOPS met bursting)": "7.500 (30.000)",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "250 MB/seconde (1,000 MB/seconde)",
+       "Prijs per koppeling per maand (gedeelde schijf)": "€28,02"
+    },
+    "P60": {
+       "Schijfgrootte": "8 TiB",
+       "Prijs per maand": "€877,58",
+       "1 jaar gereserveerd Prijs per maand": "€833,67",
+       "Maximum IOPS (Maximum IOPS met bursting)": "16.000 (30.000)",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "500 MB/seconde (1,000 MB/seconde)",
+       "Prijs per koppeling per maand (gedeelde schijf)": "€56,03"
+    },
+    "P70": {
+       "Schijfgrootte": "16 TiB",
+       "Prijs per maand": "€1.671,57",
+       "1 jaar gereserveerd Prijs per maand": "€1.587,93",
+       "Maximum IOPS (Maximum IOPS met bursting)": "18.000 (30.000)",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "750 MB/seconde (1,000 MB/seconde)",
+       "Prijs per koppeling per maand (gedeelde schijf)": "€120,05"
+    },
+    "P80": {
+       "Schijfgrootte": "32 TiBÊ(32767 GiB)",
+       "Prijs per maand": "€3.343,13",
+       "1 jaar gereserveerd Prijs per maand": "€3.175,94",
+       "Maximum IOPS (Maximum IOPS met bursting)": "20.000 (30.000)",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "900 MB/seconde (1,000 MB/seconde)",
+       "Prijs per koppeling per maand (gedeelde schijf)": "€240,09"
+    },
+    "E1": {
+       "Schijfgrootte": "4 GiB",
+       "Prijs per maand": "€0,26",
+       "1 jaar gereserveerd Prijs per maand": "",
+       "Maximum IOPS (Maximum IOPS met bursting)": "500",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "60 MB/seconde",
+       "Prijs per koppeling per maand (gedeelde schijf)": ""
+    },
+    "E2": {
+       "Schijfgrootte": "8 GiB",
+       "Prijs per maand": "€0,51",
+       "1 jaar gereserveerd Prijs per maand": "",
+       "Maximum IOPS (Maximum IOPS met bursting)": "500",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "60 MB/seconde",
+       "Prijs per koppeling per maand (gedeelde schijf)": ""
+    },
+    "E3": {
+       "Schijfgrootte": "16 GiB",
+       "Prijs per maand": "€1,02",
+       "1 jaar gereserveerd Prijs per maand": "",
+       "Maximum IOPS (Maximum IOPS met bursting)": "500",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "60 MB/seconde",
+       "Prijs per koppeling per maand (gedeelde schijf)": ""
+    },
+    "E4": {
+       "Schijfgrootte": "32 GiB",
+       "Prijs per maand": "€2,03",
+       "1 jaar gereserveerd Prijs per maand": "",
+       "Maximum IOPS (Maximum IOPS met bursting)": "500",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "60 MB/seconde",
+       "Prijs per koppeling per maand (gedeelde schijf)": ""
+    },
+    "E6": {
+       "Schijfgrootte": "64 GiB",
+       "Prijs per maand": "€4,05",
+       "1 jaar gereserveerd Prijs per maand": "",
+       "Maximum IOPS (Maximum IOPS met bursting)": "500",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "60 MB/seconde",
+       "Prijs per koppeling per maand (gedeelde schijf)": ""
+    },
+    "E10": {
+       "Schijfgrootte": "128 GiB",
+       "Prijs per maand": "€8,10",
+       "1 jaar gereserveerd Prijs per maand": "",
+       "Maximum IOPS (Maximum IOPS met bursting)": "500",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "60 MB/seconde",
+       "Prijs per koppeling per maand (gedeelde schijf)": ""
+    },
+    "E15": {
+       "Schijfgrootte": "256 GiB",
+       "Prijs per maand": "€16,20",
+       "1 jaar gereserveerd Prijs per maand": "",
+       "Maximum IOPS (Maximum IOPS met bursting)": "500",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "60 MB/seconde",
+       "Prijs per koppeling per maand (gedeelde schijf)": ""
+    },
+    "E20": {
+       "Schijfgrootte": "512 GiB",
+       "Prijs per maand": "€32,39",
+       "1 jaar gereserveerd Prijs per maand": "",
+       "Maximum IOPS (Maximum IOPS met bursting)": "500",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "60 MB/seconde",
+       "Prijs per koppeling per maand (gedeelde schijf)": ""
+    },
+    "E30": {
+       "Schijfgrootte": "1 TiB",
+       "Prijs per maand": "€64,77",
+       "1 jaar gereserveerd Prijs per maand": "",
+       "Maximum IOPS (Maximum IOPS met bursting)": "500",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "60 MB/seconde",
+       "Prijs per koppeling per maand (gedeelde schijf)": ""
+    },
+    "E40": {
+       "Schijfgrootte": "2 TiB",
+       "Prijs per maand": "€129,54",
+       "1 jaar gereserveerd Prijs per maand": "",
+       "Maximum IOPS (Maximum IOPS met bursting)": "500",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "60 MB/seconde",
+       "Prijs per koppeling per maand (gedeelde schijf)": ""
+    },
+    "E50": {
+       "Schijfgrootte": "4 TiB",
+       "Prijs per maand": "€259,07",
+       "1 jaar gereserveerd Prijs per maand": "",
+       "Maximum IOPS (Maximum IOPS met bursting)": "500",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "60 MB/seconde",
+       "Prijs per koppeling per maand (gedeelde schijf)": ""
+    },
+    "E60": {
+       "Schijfgrootte": "8 TiB",
+       "Prijs per maand": "€518,13",
+       "1 jaar gereserveerd Prijs per maand": "",
+       "Maximum IOPS (Maximum IOPS met bursting)": "2.000",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "400 MB/seconde",
+       "Prijs per koppeling per maand (gedeelde schijf)": ""
+    },
+    "E70": {
+       "Schijfgrootte": "16 TiB",
+       "Prijs per maand": "€1.036,25",
+       "1 jaar gereserveerd Prijs per maand": "",
+       "Maximum IOPS (Maximum IOPS met bursting)": "4.000",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "600 MB/seconde",
+       "Prijs per koppeling per maand (gedeelde schijf)": ""
+    },
+    "E80": {
+       "Schijfgrootte": "32 TiBÊ(32767 GiB)",
+       "Prijs per maand": "€2.072,50",
+       "1 jaar gereserveerd Prijs per maand": "",
+       "Maximum IOPS (Maximum IOPS met bursting)": "6.000",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "750 MB/seconde",
+       "Prijs per koppeling per maand (gedeelde schijf)": ""
+    },
+    "S4": {
+       "Schijfgrootte": "32 GiB",
+       "Prijs per maand": "€1,30",
+       "1 jaar gereserveerd Prijs per maand": "",
+       "Maximum IOPS (Maximum IOPS met bursting)": "Tot 500",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "Tot 60 MB/seconde",
+       "Prijs per koppeling per maand (gedeelde schijf)": ""
+    },
+    "S6": {
+       "Schijfgrootte": "64 GiB",
+       "Prijs per maand": "€2,54",
+       "1 jaar gereserveerd Prijs per maand": "",
+       "Maximum IOPS (Maximum IOPS met bursting)": "Tot 500",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "Tot 60 MB/seconde",
+       "Prijs per koppeling per maand (gedeelde schijf)": ""
+    },
+    "S10": {
+       "Schijfgrootte": "128 GiB",
+       "Prijs per maand": "€4,97",
+       "1 jaar gereserveerd Prijs per maand": "",
+       "Maximum IOPS (Maximum IOPS met bursting)": "Tot 500",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "Tot 60 MB/seconde",
+       "Prijs per koppeling per maand (gedeelde schijf)": ""
+    },
+    "S15": {
+       "Schijfgrootte": "256 GiB",
+       "Prijs per maand": "€9,56",
+       "1 jaar gereserveerd Prijs per maand": "",
+       "Maximum IOPS (Maximum IOPS met bursting)": "Tot 500",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "Tot 60 MB/seconde",
+       "Prijs per koppeling per maand (gedeelde schijf)": ""
+    },
+    "S20": {
+       "Schijfgrootte": "512 GiB",
+       "Prijs per maand": "€18,36",
+       "1 jaar gereserveerd Prijs per maand": "",
+       "Maximum IOPS (Maximum IOPS met bursting)": "Tot 500",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "Tot 60 MB/seconde",
+       "Prijs per koppeling per maand (gedeelde schijf)": ""
+    },
+    "S30": {
+       "Schijfgrootte": "1 TiB",
+       "Prijs per maand": "€34,55",
+       "1 jaar gereserveerd Prijs per maand": "",
+       "Maximum IOPS (Maximum IOPS met bursting)": "Tot 500",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "Tot 60 MB/seconde",
+       "Prijs per koppeling per maand (gedeelde schijf)": ""
+    },
+    "S40": {
+       "Schijfgrootte": "2 TiB",
+       "Prijs per maand": "€69,09",
+       "1 jaar gereserveerd Prijs per maand": "",
+       "Maximum IOPS (Maximum IOPS met bursting)": "Tot 500",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "Tot 60 MB/seconde",
+       "Prijs per koppeling per maand (gedeelde schijf)": ""
+    },
+    "S50": {
+       "Schijfgrootte": "4 TiB",
+       "Prijs per maand": "€138,17",
+       "1 jaar gereserveerd Prijs per maand": "",
+       "Maximum IOPS (Maximum IOPS met bursting)": "Tot 500",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "Tot 60 MB/seconde",
+       "Prijs per koppeling per maand (gedeelde schijf)": ""
+    },
+    "S60": {
+       "Schijfgrootte": "8 TiB",
+       "Prijs per maand": "€276,34",
+       "1 jaar gereserveerd Prijs per maand": "",
+       "Maximum IOPS (Maximum IOPS met bursting)": "Tot 1.300",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "Tot 300 MB/seconde",
+       "Prijs per koppeling per maand (gedeelde schijf)": ""
+    },
+    "S70": {
+       "Schijfgrootte": "16 TiB",
+       "Prijs per maand": "€552,67",
+       "1 jaar gereserveerd Prijs per maand": "",
+       "Maximum IOPS (Maximum IOPS met bursting)": "Tot 2.000",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "Tot 500 MB/seconde",
+       "Prijs per koppeling per maand (gedeelde schijf)": ""
+    },
+    "S80": {
+       "Schijfgrootte": "32 TiBÊ(32767 GiB)",
+       "Prijs per maand": "€1.105,34",
+       "1 jaar gereserveerd Prijs per maand": "",
+       "Maximum IOPS (Maximum IOPS met bursting)": "Tot 2.000",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "Tot 500 MB/seconde",
+       "Prijs per koppeling per maand (gedeelde schijf)": ""
+    }
+ }
