@@ -19,6 +19,39 @@ var osdisk_options = []; // html string of option elements for OS disk types to 
 var osdisk_prices = []; // prices per month for os disk
 var osdisk_sizes = []; // disk size in GiB
 
+// NOT USED CURRENTLY: promise to get vm types from ms pricing api
+let getVMOptionsPromise = new Promise((resolve, reject) => {
+  fetch("https://prices.azure.com/api/retail/prices?currencyCode='EUR'&$filter=serviceName eq 'Virtual Machines'")
+    .done(function (data) {
+      console.log(data);
+      // $.each(data, function (key, val) {
+      //   // for each of the VM types in the json data
+      //   vm_prices[key] = parseFloat(
+      //     val["Prijs per uur"].replace("€", "").replace(",", ".")
+      //   ); // set price for VM type key
+      //   vm_ram[key] = val.RAM; // set RAM size for VM type key
+      //   vm_cpu[key] = val["vCPU('s)"]; // set number of cpu cores for VM type key
+
+      //   if (key == "B2S") {
+      //     // add B2S type as selected default option to html string
+      //     dd_options.push(
+      //       "<option value='" + key + "' selected>" + key + "</option>"
+      //     );
+      //   } else {
+      //     // add other VM types as options to html string
+      //     dd_options.push("<option value='" + key + "'>" + key + "</option>");
+      //   }
+      // });
+      resolve("Success!");
+    })
+    .fail(function () {
+      console.log("Failed");
+      reject("Error!");
+    });
+});
+
+
+
 // promise to get VM types 
 let getOptionsPromise = new Promise((resolve, reject) => {
   $.getJSON(
