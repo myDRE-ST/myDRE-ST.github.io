@@ -22,12 +22,10 @@ var osdisk_sizes = []; // disk size in GiB
 // promise to get VM types 
 let getOptionsPromise = new Promise((resolve, reject) => {
   $.getJSON(
-    "https://gist.githubusercontent.com/JochemBek/8bb12bdeaeba29e634f234344d541b75/raw/6004472b9494e6948aa15222292d23643fe996de/virtualmachinesnew.json" // UPDATE with new links
+    "https://gist.githubusercontent.com/JochemBek/8bb12bdeaeba29e634f234344d541b75/raw/6004472b9494e6948aa15222292d23643fe996de/virtualmachinesnew.json"
   )
     .done(function (data) {
-      console.log(data);
       $.each(data, function (k, val) {
-        console.log(val);
 
         var key = val["name"];
         // for each of the VM types in the json data
