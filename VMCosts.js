@@ -1,7 +1,7 @@
 /*
  * Logic to add/del/copy Virtual Machines (VM) and compute their costs in DRE Cost estimator
  * Written by Jochem Bek, UMC Utrecht
- * Last updated: 4-9-2020
+ * Last updated: 30-1-2022
  */
 
 var surf_discount_perc = 3; // discount in % from SURF-MS contract
@@ -19,54 +19,25 @@ var osdisk_options = []; // html string of option elements for OS disk types to 
 var osdisk_prices = []; // prices per month for os disk
 var osdisk_sizes = []; // disk size in GiB
 
-// NOT USED CURRENTLY: promise to get vm types from ms pricing api
-let getVMOptionsPromise = new Promise((resolve, reject) => {
-  fetch("https://prices.azure.com/api/retail/prices?currencyCode='EUR'&$filter=serviceName eq 'Virtual Machines'")
-    .done(function (data) {
-      console.log(data);
-      // $.each(data, function (key, val) {
-      //   // for each of the VM types in the json data
-      //   vm_prices[key] = parseFloat(
-      //     val["Prijs per uur"].replace("€", "").replace(",", ".")
-      //   ); // set price for VM type key
-      //   vm_ram[key] = val.RAM; // set RAM size for VM type key
-      //   vm_cpu[key] = val["vCPU('s)"]; // set number of cpu cores for VM type key
-
-      //   if (key == "B2S") {
-      //     // add B2S type as selected default option to html string
-      //     dd_options.push(
-      //       "<option value='" + key + "' selected>" + key + "</option>"
-      //     );
-      //   } else {
-      //     // add other VM types as options to html string
-      //     dd_options.push("<option value='" + key + "'>" + key + "</option>");
-      //   }
-      // });
-      resolve("Success!");
-    })
-    .fail(function () {
-      console.log("Failed");
-      reject("Error!");
-    });
-});
-
-
-
 // promise to get VM types 
 let getOptionsPromise = new Promise((resolve, reject) => {
   $.getJSON(
-    "https://gist.githubusercontent.com/JochemBek/98643e51feccf93dd536bb24fa07e9e2/raw/0067a0d18a4a264b5f74fe6a9093fc803c4d9e88/virtualmachines.json"
+    "https://gist.githubusercontent.com/JochemBek/8bb12bdeaeba29e634f234344d541b75/raw/6004472b9494e6948aa15222292d23643fe996de/virtualmachinesnew.json" // UPDATE with new links
   )
     .done(function (data) {
-      $.each(data, function (key, val) {
+      console.log(data);
+      $.each(data, function (k, val) {
+        console.log(val);
+
+        var key = val["name"];
         // for each of the VM types in the json data
         vm_prices[key] = parseFloat(
-          val["Prijs per uur"].replace("€", "").replace(",", ".")
+          val["windowsPrice"]
         ); // set price for VM type key
-        vm_ram[key] = val.RAM; // set RAM size for VM type key
-        vm_cpu[key] = val["vCPU('s)"]; // set number of cpu cores for VM type key
+        vm_ram[key] = val["memoryInMB"]; // set RAM size for VM type key (MBs)
+        vm_cpu[key] = val["numberOfCores"]; // set number of cpu cores for VM type key
 
-        if (key == "B2S") {
+        if (key == "Standard_B2s") {
           // add B2S type as selected default option to html string
           dd_options.push(
             "<option value='" + key + "' selected>" + key + "</option>"
@@ -165,7 +136,7 @@ function addVM() {
                             </svg>
                             <span id="vm-` +
     running_id +
-    `-RAM"></span>
+    `-RAM"></span> MB RAM
                             </div>
 
                             <label for="osdisk-` +
@@ -271,7 +242,7 @@ function copyVM(val) {
                             </svg>
                             <span id="vm-` +
     running_id +
-    `-RAM"></span>
+    `-RAM"></span> MB RAM
                             </div>
 
                             <label for="osdisk-` +
