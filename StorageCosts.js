@@ -4,7 +4,7 @@
  * Last updated: 4-9-2020
  */
 
-var raw_cost_per_gb = 0.0541; // cost per gb per month before taxes ! preferably from MS API call
+var raw_cost_per_gb = 0.1124; // cost per gb per month before taxes ! preferably from MS API call
 var surf_discount_perc = 3; // discount in % from SURF-MS contract
 var surf_admin_perc = 5; // administration costs in % from SURF contract
 var btw_perc = 21; // Dutch VAT taxes in %
