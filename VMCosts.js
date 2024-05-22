@@ -55,7 +55,7 @@ let getOptionsPromise = new Promise((resolve, reject) => {
 // promise to get os disk types
 let getOsDiskPromise = new Promise((resolve, reject) => {
   $.getJSON(
-    "https://github.com/myDRE-ST/myDRE-ST.github.io/blob/4a5645e3ce60941c51fb15f44f6887de08152998/osdisks.json"
+    "https://gist.githubusercontent.com/myDRE-ST/f0cd39d726fde77902f8a9f2f35673e4/raw/54c39e46f6eefd107b98ee268913fe254ca3a83d/osdisk.json"
   )
     .done(function (data) {
       $.each(data, function (key, val) {
