@@ -1,314 +1,314 @@
 {
     "P1": {
-        "Disk Size": "4 GiB",
-        "Price per month": "€0.73",
-        "1-Year Reserved Price Per Month": "N/A",
-        "Max IOPS (Max IOPS with bursting)": "120 (3,500)",
-        "Max throughput (Max throughput with bursting)": "25 MB/second (170 MB/second)",
-        "Price per mount per month (Shared Disk)": "€0.04"
+       "Schijfgrootte": "4 GiB",
+       "Prijs per maand": "€0,73",
+       "1 jaar gereserveerd Prijs per maand": "N/A",
+       "Maximum IOPS (Maximum IOPS met bursting)": "120 (3.500)",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "25 MB/seconde (170 MB/seconde)",
+       "Prijs per koppeling per maand (gedeelde schijf)": "0,04"
     },
     "P2": {
-        "Disk Size": "8 GiB",
-        "Price per month": "€1.45",
-        "1-Year Reserved Price Per Month": "N/A",
-        "Max IOPS (Max IOPS with bursting)": "120 (3,500)",
-        "Max throughput (Max throughput with bursting)": "25 MB/second (170 MB/second)",
-        "Price per mount per month (Shared Disk)": "€0.08"
+       "Schijfgrootte": "8 GiB",
+       "Prijs per maand": "€1,45",
+       "1 jaar gereserveerd Prijs per maand": "N/A",
+       "Maximum IOPS (Maximum IOPS met bursting)": "120 (3.500)",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "25 MB/seconde (170 MB/seconde)",
+       "Prijs per koppeling per maand (gedeelde schijf)": "0,08"
     },
     "P3": {
-        "Disk Size": "16 GiB",
-        "Price per month": "€2.89",
-        "1-Year Reserved Price Per Month": "N/A",
-        "Max IOPS (Max IOPS with bursting)": "120 (3,500)",
-        "Max throughput (Max throughput with bursting)": "25 MB/second (170 MB/second)",
-        "Price per mount per month (Shared Disk)": "€0.15"
+       "Schijfgrootte": "16 GiB",
+       "Prijs per maand": "€2,89",
+       "1 jaar gereserveerd Prijs per maand": "N/A",
+       "Maximum IOPS (Maximum IOPS met bursting)": "120 (3.500)",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "25 MB/seconde (170 MB/seconde)",
+       "Prijs per koppeling per maand (gedeelde schijf)": "0,15"
     },
     "P4": {
-        "Disk Size": "32 GiB",
-        "Price per month": "€5.38",
-        "1-Year Reserved Price Per Month": "N/A",
-        "Max IOPS (Max IOPS with bursting)": "120 (3,500)",
-        "Max throughput (Max throughput with bursting)": "25 MB/second (170 MB/second)",
-        "Price per mount per month (Shared Disk)": "€0.32"
+       "Schijfgrootte": "32 GiB",
+       "Prijs per maand": "€5,38",
+       "1 jaar gereserveerd Prijs per maand": "N/A",
+       "Maximum IOPS (Maximum IOPS met bursting)": "120 (3.500)",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "25 MB/seconde (170 MB/seconde)",
+       "Prijs per koppeling per maand (gedeelde schijf)": "0,32"
     },
     "P6": {
-        "Disk Size": "64 GiB",
-        "Price per month": "€10.40",
-        "1-Year Reserved Price Per Month": "N/A",
-        "Max IOPS (Max IOPS with bursting)": "240 (3,500)",
-        "Max throughput (Max throughput with bursting)": "50 MB/second (170 MB/second)",
-        "Price per mount per month (Shared Disk)": "€0.57"
+       "Schijfgrootte": "64 GiB",
+       "Prijs per maand": "€10,40",
+       "1 jaar gereserveerd Prijs per maand": "N/A",
+       "Maximum IOPS (Maximum IOPS met bursting)": "240 (3.500)",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "50 MB/seconde (170 MB/seconde)",
+       "Prijs per koppeling per maand (gedeelde schijf)": "0,57"
     },
     "P10": {
-        "Disk Size": "128 GiB",
-        "Price per month": "€20.08",
-        "1-Year Reserved Price Per Month": "N/A",
-        "Max IOPS (Max IOPS with bursting)": "500 (3,500)",
-        "Max throughput (Max throughput with bursting)": "100 MB/second (170 MB/second)",
-        "Price per mount per month (Shared Disk)": "€1.10"
+       "Schijfgrootte": "128 GiB",
+       "Prijs per maand": "€20,08",
+       "1 jaar gereserveerd Prijs per maand": "N/A",
+       "Maximum IOPS (Maximum IOPS met bursting)": "500 (3.500)",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "100 MB/seconde (170 MB/seconde)",
+       "Prijs per koppeling per maand (gedeelde schijf)": "1.10"
     },
     "P15": {
-        "Disk Size": "256 GiB",
-        "Price per month": "€38.72",
-        "1-Year Reserved Price Per Month": "N/A",
-        "Max IOPS (Max IOPS with bursting)": "1,100 (3,500)",
-        "Max throughput (Max throughput with bursting)": "125 MB/second (170 MB/second)",
-        "Price per mount per month (Shared Disk)": "€2.20"
+       "Schijfgrootte": "256 GiB",
+       "Prijs per maand": "€38,72",
+       "1 jaar gereserveerd Prijs per maand": "N/A",
+       "Maximum IOPS (Maximum IOPS met bursting)": "1.100 (3.500)",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "125 MB/seconde (170 MB/seconde)",
+       "Prijs per koppeling per maand (gedeelde schijf)": "€2,20"
     },
     "P20": {
-        "Disk Size": "512 GiB",
-        "Price per month": "€74.59",
-        "1-Year Reserved Price Per Month": "N/A",
-        "Max IOPS (Max IOPS with bursting)": "2,300 (3,500)",
-        "Max throughput (Max throughput with bursting)": "150 MB/second (170 MB/second)",
-        "Price per mount per month (Shared Disk)": "€3.96"
+       "Schijfgrootte": "512 GiB",
+       "Prijs per maand": "€74,59",
+       "1 jaar gereserveerd Prijs per maand": "N/A",
+       "Maximum IOPS (Maximum IOPS met bursting)": "2.300 (3.500)",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "150 MB/seconde (170 MB/seconde)",
+       "Prijs per koppeling per maand (gedeelde schijf)": "€3,96"
     },
     "P30": {
-        "Disk Size": "1 TiB",
-        "Price per month": "€137.69",
-        "1-Year Reserved Price Per Month": "€130.81",
-        "Max IOPS (Max IOPS with bursting)": "5,000 (30,000)",
-        "Max throughput (Max throughput with bursting)": "200 MB/second (1,000 MB/second)",
-        "Price per mount per month (Shared Disk)": "€7.91"
+       "Schijfgrootte": "1 TiB",
+       "Prijs per maand": "€137,69",
+       "1 jaar gereserveerd Prijs per maand": "€130,81",
+       "Maximum IOPS (Maximum IOPS met bursting)": "5.000 (30.000)",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "200 MB/seconde (1,000 MB/seconde)",
+       "Prijs per koppeling per maand (gedeelde schijf)": "€7,91"
     },
     "P40": {
-        "Disk Size": "2 TiB",
-        "Price per month": "€263.87",
-        "1-Year Reserved Price Per Month": "€250.66",
-        "Max IOPS (Max IOPS with bursting)": "7,500 (30,000)",
-        "Max throughput (Max throughput with bursting)": "250 MB/second (1,000 MB/second)",
-        "Price per mount per month (Shared Disk)": "€15.82"
+       "Schijfgrootte": "2 TiB",
+       "Prijs per maand": "€263,87",
+       "1 jaar gereserveerd Prijs per maand": "€250,66",
+       "Maximum IOPS (Maximum IOPS met bursting)": "7.500 (30.000)",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "250 MB/seconde (1,000 MB/seconde)",
+       "Prijs per koppeling per maand (gedeelde schijf)": "€15,82"
     },
     "P50": {
-        "Disk Size": "4 TiB",
-        "Price per month": "€504.79",
-        "1-Year Reserved Price Per Month": "€479.55",
-        "Max IOPS (Max IOPS with bursting)": "7,500 (30,000)",
-        "Max throughput (Max throughput with bursting)": "250 MB/second (1,000 MB/second)",
-        "Price per mount per month (Shared Disk)": "€30.76"
+       "Schijfgrootte": "4 TiB",
+       "Prijs per maand": "€504,79",
+       "1 jaar gereserveerd Prijs per maand": "€479,55",
+       "Maximum IOPS (Maximum IOPS met bursting)": "7.500 (30.000)",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "250 MB/seconde (1,000 MB/seconde)",
+       "Prijs per koppeling per maand (gedeelde schijf)": "€30,76"
     },
     "P60": {
-        "Disk Size": "8 TiB",
-        "Price per month": "€963.69",
-        "1-Year Reserved Price Per Month": "€915.49",
-        "Max IOPS (Max IOPS with bursting)": "16,000 (30,000)",
-        "Max throughput (Max throughput with bursting)": "500 MB/second (1,000 MB/second)",
-        "Price per mount per month (Shared Disk)": "€61.52"
+       "Schijfgrootte": "8 TiB",
+       "Prijs per maand": "€963,69",
+       "1 jaar gereserveerd Prijs per maand": "€915,49",
+       "Maximum IOPS (Maximum IOPS met bursting)": "16.000 (30.000)",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "500 MB/seconde (1,000 MB/seconde)",
+       "Prijs per koppeling per maand (gedeelde schijf)": "€61,52"
     },
     "P70": {
-        "Disk Size": "16 TiB",
-        "Price per month": "€1,835.60",
-        "1-Year Reserved Price Per Month": "€1,743.77",
-        "Max IOPS (Max IOPS with bursting)": "18,000 (30,000)",
-        "Max throughput (Max throughput with bursting)": "750 MB/second (1,000 MB/second)",
-        "Price per mount per month (Shared Disk)": "€131.83"
+       "Schijfgrootte": "16 TiB",
+       "Prijs per maand": "€1.835,60",
+       "1 jaar gereserveerd Prijs per maand": "€1.743,77",
+       "Maximum IOPS (Maximum IOPS met bursting)": "18.000 (30.000)",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "750 MB/seconde (1,000 MB/seconde)",
+       "Prijs per koppeling per maand (gedeelde schijf)": "€131,83"
     },
     "P80": {
-        "Disk Size": "32 TiB (32,767 GiB)",
-        "Price per month": "€3,671.20",
-        "1-Year Reserved Price Per Month": "€3,487.60",
-        "Max IOPS (Max IOPS with bursting)": "20,000 (30,000)",
-        "Max throughput (Max throughput with bursting)": "900 MB/second (1,000 MB/second)",
-        "Price per mount per month (Shared Disk)": "€263.65"
+       "Schijfgrootte": "32 TiBÊ(32767 GiB)",
+       "Prijs per maand": "€3.671,20",
+       "1 jaar gereserveerd Prijs per maand": "€3.487,60",
+       "Maximum IOPS (Maximum IOPS met bursting)": "20.000 (30.000)",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "900 MB/seconde (1,000 MB/seconde)",
+       "Prijs per koppeling per maand (gedeelde schijf)": "€263,65"
     },
     "E1": {
-        "Disk Size": "4 GiB",
-        "Price per month": "€0.28",
-        "1-Year Reserved Price Per Month": "– – Empty",
-        "Max IOPS (Max IOPS with bursting)": "500 (600)",
-        "Max throughput (Max throughput with bursting)": "60 MB/second (150 MB/second)",
-        "Price per mount per month (Shared Disk)": "€0.04"
+       "Schijfgrootte": "4 GiB",
+       "Prijs per maand": "€0,28",
+       "1 jaar gereserveerd Prijs per maand": "",
+       "Maximum IOPS (Maximum IOPS met bursting)": "500",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "60 MB/seconde",
+       "Prijs per koppeling per maand (gedeelde schijf)": "0,04"
     },
     "E2": {
-        "Disk Size": "8 GiB",
-        "Price per month": "€0.56",
-        "1-Year Reserved Price Per Month": "– – Empty",
-        "Max IOPS (Max IOPS with bursting)": "500 (600)",
-        "Max throughput (Max throughput with bursting)": "60 MB/second (150 MB/second)",
-        "Price per mount per month (Shared Disk)": "€0.08"
+       "Schijfgrootte": "8 GiB",
+       "Prijs per maand": "€0,56",
+       "1 jaar gereserveerd Prijs per maand": "",
+       "Maximum IOPS (Maximum IOPS met bursting)": "500",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "60 MB/seconde",
+       "Prijs per koppeling per maand (gedeelde schijf)": "0,08"
     },
     "E3": {
-        "Disk Size": "16 GiB",
-        "Price per month": "€1.12",
-        "1-Year Reserved Price Per Month": "– – Empty",
-        "Max IOPS (Max IOPS with bursting)": "500 (600)",
-        "Max throughput (Max throughput with bursting)": "60 MB/second (150 MB/second)",
-        "Price per mount per month (Shared Disk)": "€0.15"
+       "Schijfgrootte": "16 GiB",
+       "Prijs per maand": "€1,12",
+       "1 jaar gereserveerd Prijs per maand": "",
+       "Maximum IOPS (Maximum IOPS met bursting)": "500",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "60 MB/seconde",
+       "Prijs per koppeling per maand (gedeelde schijf)": "0,15"
     },
     "E4": {
-        "Disk Size": "32 GiB",
-        "Price per month": "€2.23",
-        "1-Year Reserved Price Per Month": "– – Empty",
-        "Max IOPS (Max IOPS with bursting)": "500 (600)",
-        "Max throughput (Max throughput with bursting)": "60 MB/second (150 MB/second)",
-        "Price per mount per month (Shared Disk)": "€0.32"
+       "Schijfgrootte": "32 GiB",
+       "Prijs per maand": "€2,23",
+       "1 jaar gereserveerd Prijs per maand": "",
+       "Maximum IOPS (Maximum IOPS met bursting)": "500",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "60 MB/seconde",
+       "Prijs per koppeling per maand (gedeelde schijf)": "0,32"
     },
     "E6": {
-        "Disk Size": "64 GiB",
-        "Price per month": "€4.45",
-        "1-Year Reserved Price Per Month": "– – Empty",
-        "Max IOPS (Max IOPS with bursting)": "500 (600)",
-        "Max throughput (Max throughput with bursting)": "60 MB/second (150 MB/second)",
-        "Price per mount per month (Shared Disk)": "€0.57"
+       "Schijfgrootte": "64 GiB",
+       "Prijs per maand": "€4,45",
+       "1 jaar gereserveerd Prijs per maand": "",
+       "Maximum IOPS (Maximum IOPS met bursting)": "500",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "60 MB/seconde",
+       "Prijs per koppeling per maand (gedeelde schijf)": "0,57"
     },
     "E10": {
-        "Disk Size": "128 GiB",
-        "Price per month": "€8.99",
-        "1-Year Reserved Price Per Month": "– – Empty",
-        "Max IOPS (Max IOPS with bursting)": "500 (600)",
-        "Max throughput (Max throughput with bursting)": "60 MB/second (150 MB/second)",
-        "Price per mount per month (Shared Disk)": "€1.11"
+       "Schijfgrootte": "128 GiB",
+       "Prijs per maand": "€8,90",
+       "1 jaar gereserveerd Prijs per maand": "",
+       "Maximum IOPS (Maximum IOPS met bursting)": "500",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "60 MB/seconde",
+       "Prijs per koppeling per maand (gedeelde schijf)": "1,10"
     },
     "E15": {
-        "Disk Size": "256 GiB",
-        "Price per month": "€17.79",
-        "1-Year Reserved Price Per Month": "– – Empty",
-        "Max IOPS (Max IOPS with bursting)": "500 (600)",
-        "Max throughput (Max throughput with bursting)": "60 MB/second (150 MB/second)",
-        "Price per mount per month (Shared Disk)": "€2.21"
+       "Schijfgrootte": "256 GiB",
+       "Prijs per maand": "€17,79",
+       "1 jaar gereserveerd Prijs per maand": "",
+       "Maximum IOPS (Maximum IOPS met bursting)": "500",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "60 MB/seconde",
+       "Prijs per koppeling per maand (gedeelde schijf)": "2,21"
     },
     "E20": {
-        "Disk Size": "512 GiB",
-        "Price per month": "€35.57",
-        "1-Year Reserved Price Per Month": "– – Empty",
-        "Max IOPS (Max IOPS with bursting)": "500 (600)",
-        "Max throughput (Max throughput with bursting)": "60 MB/second (150 MB/second)",
-        "Price per mount per month (Shared Disk)": "€3.97"
+       "Schijfgrootte": "512 GiB",
+       "Prijs per maand": "€35,57",
+       "1 jaar gereserveerd Prijs per maand": "",
+       "Maximum IOPS (Maximum IOPS met bursting)": "500",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "60 MB/seconde",
+       "Prijs per koppeling per maand (gedeelde schijf)": "3,97"
     },
     "E30": {
-        "Disk Size": "1 TiB",
-        "Price per month": "€71.13",
-        "1-Year Reserved Price Per Month": "– – Empty",
-        "Max IOPS (Max IOPS with bursting)": "500 (1,000)",
-        "Max throughput (Max throughput with bursting)": "60 MB/second (250 MB/second)",
-        "Price per mount per month (Shared Disk)": "€7.91"
+       "Schijfgrootte": "1 TiB",
+       "Prijs per maand": "€71,13",
+       "1 jaar gereserveerd Prijs per maand": "",
+       "Maximum IOPS (Maximum IOPS met bursting)": "500",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "60 MB/seconde",
+       "Prijs per koppeling per maand (gedeelde schijf)": "7,91"
     },
     "E40": {
-        "Disk Size": "2 TiB",
-        "Price per month": "€142.25",
-        "1-Year Reserved Price Per Month": "– – Empty",
-        "Max IOPS (Max IOPS with bursting)": "500",
-        "Max throughput (Max throughput with bursting)": "60 MB/second",
-        "Price per mount per month (Shared Disk)": "€15.82"
+       "Schijfgrootte": "2 TiB",
+       "Prijs per maand": "€142,25",
+       "1 jaar gereserveerd Prijs per maand": "",
+       "Maximum IOPS (Maximum IOPS met bursting)": "500",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "60 MB/seconde",
+       "Prijs per koppeling per maand (gedeelde schijf)": "15,82"
     },
     "E50": {
-        "Disk Size": "4 TiB",
-        "Price per month": "€284.49",
-        "1-Year Reserved Price Per Month": "– – Empty",
-        "Max IOPS (Max IOPS with bursting)": "500",
-        "Max throughput (Max throughput with bursting)": "60 MB/second",
-        "Price per mount per month (Shared Disk)": "€30.76"
+       "Schijfgrootte": "4 TiB",
+       "Prijs per maand": "€284,49",
+       "1 jaar gereserveerd Prijs per maand": "",
+       "Maximum IOPS (Maximum IOPS met bursting)": "500",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "60 MB/seconde",
+       "Prijs per koppeling per maand (gedeelde schijf)": "30,76"
     },
     "E60": {
-        "Disk Size": "8 TiB",
-        "Price per month": "€568.97",
-        "1-Year Reserved Price Per Month": "– – Empty",
-        "Max IOPS (Max IOPS with bursting)": "2,000",
-        "Max throughput (Max throughput with bursting)": "400 MB/second",
-        "Price per mount per month (Shared Disk)": "€61.52"
+       "Schijfgrootte": "8 TiB",
+       "Prijs per maand": "€568,97",
+       "1 jaar gereserveerd Prijs per maand": "",
+       "Maximum IOPS (Maximum IOPS met bursting)": "2.000",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "400 MB/seconde",
+       "Prijs per koppeling per maand (gedeelde schijf)": "61,52"
     },
     "E70": {
-        "Disk Size": "16 TiB",
-        "Price per month": "€1,137.94",
-        "1-Year Reserved Price Per Month": "– – Empty",
-        "Max IOPS (Max IOPS with bursting)": "4,000",
-        "Max throughput (Max throughput with bursting)": "600 MB/second",
-        "Price per mount per month (Shared Disk)": "€131.83"
+       "Schijfgrootte": "16 TiB",
+       "Prijs per maand": "€1.137,94",
+       "1 jaar gereserveerd Prijs per maand": "",
+       "Maximum IOPS (Maximum IOPS met bursting)": "4.000",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "600 MB/seconde",
+       "Prijs per koppeling per maand (gedeelde schijf)": "131,83"
     },
     "E80": {
-        "Disk Size": "32 TiB (32,767 GiB)",
-        "Price per month": "€2,275.88",
-        "1-Year Reserved Price Per Month": "– – Empty",
-        "Max IOPS (Max IOPS with bursting)": "6,000",
-        "Max throughput (Max throughput with bursting)": "750 MB/second",
-        "Price per mount per month (Shared Disk)": "€263.65"
+       "Schijfgrootte": "32 TiBÊ(32767 GiB)",
+       "Prijs per maand": "€2.275,88",
+       "1 jaar gereserveerd Prijs per maand": "",
+       "Maximum IOPS (Maximum IOPS met bursting)": "6.000",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "750 MB/seconde",
+       "Prijs per koppeling per maand (gedeelde schijf)": "263,65"
     },
     "S4": {
-        "Disk Size": "32 GiB",
-        "Price per month": "€1.43",
-        "1-Year Reserved Price Per Month": "– – Empty",
-        "Max IOPS (Max IOPS with bursting)": "Up to 500",
-        "Max throughput (Max throughput with bursting)": "Up to 60 MB/second",
-        "Price per mount per month (Shared Disk)": ""
+       "Schijfgrootte": "32 GiB",
+       "Prijs per maand": "€1,43",
+       "1 jaar gereserveerd Prijs per maand": "",
+       "Maximum IOPS (Maximum IOPS met bursting)": "Tot 500",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "Tot 60 MB/seconde",
+       "Prijs per koppeling per maand (gedeelde schijf)": ""
     },
     "S6": {
-        "Disk Size": "64 GiB",
-        "Price per month": "€2.79",
-        "1-Year Reserved Price Per Month": "– – Empty",
-        "Max IOPS (Max IOPS with bursting)": "Up to 500",
-        "Max throughput (Max throughput with bursting)": "Up to 60 MB/second",
-        "Price per mount per month (Shared Disk)": ""
+       "Schijfgrootte": "64 GiB",
+       "Prijs per maand": "€2,79",
+       "1 jaar gereserveerd Prijs per maand": "",
+       "Maximum IOPS (Maximum IOPS met bursting)": "Tot 500",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "Tot 60 MB/seconde",
+       "Prijs per koppeling per maand (gedeelde schijf)": ""
     },
     "S10": {
-        "Disk Size": "128 GiB",
-        "Price per month": "€5.46",
-        "1-Year Reserved Price Per Month": "– – Empty",
-        "Max IOPS (Max IOPS with bursting)": "Up to 500",
-        "Max throughput (Max throughput with bursting)": "Up to 60 MB/second",
-        "Price per mount per month (Shared Disk)": ""
+       "Schijfgrootte": "128 GiB",
+       "Prijs per maand": "€5,46",
+       "1 jaar gereserveerd Prijs per maand": "",
+       "Maximum IOPS (Maximum IOPS met bursting)": "Tot 500",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "Tot 60 MB/seconde",
+       "Prijs per koppeling per maand (gedeelde schijf)": ""
     },
     "S15": {
-        "Disk Size": "256 GiB",
-        "Price per month": "€10.50",
-        "1-Year Reserved Price Per Month": "– – Empty",
-        "Max IOPS (Max IOPS with bursting)": "Up to 500",
-        "Max throughput (Max throughput with bursting)": "Up to 60 MB/second",
-        "Price per mount per month (Shared Disk)": ""
+       "Schijfgrootte": "256 GiB",
+       "Prijs per maand": "€10,50",
+       "1 jaar gereserveerd Prijs per maand": "",
+       "Maximum IOPS (Maximum IOPS met bursting)": "Tot 500",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "Tot 60 MB/seconde",
+       "Prijs per koppeling per maand (gedeelde schijf)": ""
     },
     "S20": {
-        "Disk Size": "512 GiB",
-        "Price per month": "€20.16",
-        "1-Year Reserved Price Per Month": "– – Empty",
-        "Max IOPS (Max IOPS with bursting)": "Up to 500",
-        "Max throughput (Max throughput with bursting)": "Up to 60 MB/second",
-        "Price per mount per month (Shared Disk)": ""
+       "Schijfgrootte": "512 GiB",
+       "Prijs per maand": "€20,16",
+       "1 jaar gereserveerd Prijs per maand": "",
+       "Maximum IOPS (Maximum IOPS met bursting)": "Tot 500",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "Tot 60 MB/seconde",
+       "Prijs per koppeling per maand (gedeelde schijf)": ""
     },
     "S30": {
-        "Disk Size": "1 TiB",
-        "Price per month": "€37.94",
-        "1-Year Reserved Price Per Month": "– – Empty",
-        "Max IOPS (Max IOPS with bursting)": "Up to 500",
-        "Max throughput (Max throughput with bursting)": "Up to 60 MB/second",
-        "Price per mount per month (Shared Disk)": ""
+       "Schijfgrootte": "1 TiB",
+       "Prijs per maand": "€37,94",
+       "1 jaar gereserveerd Prijs per maand": "",
+       "Maximum IOPS (Maximum IOPS met bursting)": "Tot 500",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "Tot 60 MB/seconde",
+       "Prijs per koppeling per maand (gedeelde schijf)": ""
     },
     "S40": {
-        "Disk Size": "2 TiB",
-        "Price per month": "€75.87",
-        "1-Year Reserved Price Per Month": "– – Empty",
-        "Max IOPS (Max IOPS with bursting)": "Up to 500",
-        "Max throughput (Max throughput with bursting)": "Up to 60 MB/second",
-        "Price per mount per month (Shared Disk)": ""
+       "Schijfgrootte": "2 TiB",
+       "Prijs per maand": "€75,87",
+       "1 jaar gereserveerd Prijs per maand": "",
+       "Maximum IOPS (Maximum IOPS met bursting)": "Tot 500",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "Tot 60 MB/seconde",
+       "Prijs per koppeling per maand (gedeelde schijf)": ""
     },
     "S50": {
-        "Disk Size": "4 TiB",
-        "Price per month": "€151.73",
-        "1-Year Reserved Price Per Month": "– – Empty",
-        "Max IOPS (Max IOPS with bursting)": "Up to 500",
-        "Max throughput (Max throughput with bursting)": "Up to 60 MB/second",
-        "Price per mount per month (Shared Disk)": ""
+       "Schijfgrootte": "4 TiB",
+       "Prijs per maand": "€151,73",
+       "1 jaar gereserveerd Prijs per maand": "",
+       "Maximum IOPS (Maximum IOPS met bursting)": "Tot 500",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "Tot 60 MB/seconde",
+       "Prijs per koppeling per maand (gedeelde schijf)": ""
     },
     "S60": {
-        "Disk Size": "8 TiB",
-        "Price per month": "€303.45",
-        "1-Year Reserved Price Per Month": "– – Empty",
-        "Max IOPS (Max IOPS with bursting)": "Up to 1,300",
-        "Max throughput (Max throughput with bursting)": "Up to 300 MB/second",
-        "Price per mount per month (Shared Disk)": ""
+       "Schijfgrootte": "8 TiB",
+       "Prijs per maand": "€303,45",
+       "1 jaar gereserveerd Prijs per maand": "",
+       "Maximum IOPS (Maximum IOPS met bursting)": "Tot 1.300",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "Tot 300 MB/seconde",
+       "Prijs per koppeling per maand (gedeelde schijf)": ""
     },
     "S70": {
-        "Disk Size": "16 TiB",
-        "Price per month": "€606.90",
-        "1-Year Reserved Price Per Month": "– – Empty",
-        "Max IOPS (Max IOPS with bursting)": "Up to 2,000",
-        "Max throughput (Max throughput with bursting)": "Up to 500 MB/second",
-        "Price per mount per month (Shared Disk)": ""
+       "Schijfgrootte": "16 TiB",
+       "Prijs per maand": "€606,90",
+       "1 jaar gereserveerd Prijs per maand": "",
+       "Maximum IOPS (Maximum IOPS met bursting)": "Tot 2.000",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "Tot 500 MB/seconde",
+       "Prijs per koppeling per maand (gedeelde schijf)": ""
     },
     "S80": {
-        "Disk Size": "32 TiB (32,767 GiB)",
-        "Price per month": "€1,213.80",
-        "1-Year Reserved Price Per Month": "– – Empty",
-        "Max IOPS (Max IOPS with bursting)": "Up to 2,000",
-        "Max throughput (Max throughput with bursting)": "Up to 500 MB/second",
-        "Price per mount per month (Shared Disk)": ""
+       "Schijfgrootte": "32 TiB(32767 GiB)",
+       "Prijs per maand": "€1.213,80",
+       "1 jaar gereserveerd Prijs per maand": "",
+       "Maximum IOPS (Maximum IOPS met bursting)": "Tot 2.000",
+       "Maximale doorvoer (maximale doorvoer met bursting)": "Tot 500 MB/seconde",
+       "Prijs per koppeling per maand (gedeelde schijf)": ""
     }
-}
+ }
